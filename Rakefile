@@ -43,12 +43,28 @@ TMUX_DOTFILES = {
   "tmux.conf.osx" => "~/.tmux.conf.osx"
 }
 
+VIM_DOTFILES = {
+  "vimrc" => "~/.vimrc",
+  "vimrc.bundles" => "~/.vimrc.bundles"
+}
+
 namespace :install do
   task :tmux do
     step "install tmux dot files"
     TMUX_DOTFILES.each do |src, dst|
       link_file src, dst
     end
+  end
+
+  task :vim do
+    step "install vim dot files"
+    VIM_DOTFILES.each do |src, dst|
+      link_file src, dst
+    end
+    mkdir_p File.expand_path("~/.vim")
+    mkdir_p File.expand_path("~/.vim/backup")
+    mkdir_p File.expand_path("~/.vim/swap")
+    mkdir_p File.expand_path("~/.vim/undo")
   end
 
   task :all => [:tmux]

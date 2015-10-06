@@ -1,0 +1,19 @@
+call plug#begin('~/.vim/plugged')
+Plug 'ajh17/VimCompletesMe'
+Plug 'airblade/vim-gitgutter'
+Plug 'austintaylor/vim-indentobject'
+Plug 'bling/vim-airline'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'jazzcore/ctrlp-cmatcher'
+Plug 'jglievano/objc-syntax', { 'for': 'objc' }
+Plug 'jglievano/molokai'
+Plug 'kien/ctrlp.vim'
+Plug 'rking/ag.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/syntastic'
+Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-ruby/vim-ruby'
+Plug 'vim-scripts/Align'
+call plug#end()
