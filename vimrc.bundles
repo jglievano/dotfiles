@@ -6,7 +6,7 @@ Plug 'bling/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jazzcore/ctrlp-cmatcher'
 Plug 'jglievano/objc-syntax', { 'for': 'objc' }
-Plug 'jglievano/molokai'
+Plug 'tomasr/molokai'
 Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 Plug 'pangloss/vim-javascript'

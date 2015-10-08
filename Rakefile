@@ -1,3 +1,5 @@
+require "open3"
+
 def step(desc)
   desc = "-- #{desc} "
   desc = desc.ljust(60, "-")
@@ -65,9 +67,15 @@ namespace :install do
     mkdir_p File.expand_path("~/.vim/backup")
     mkdir_p File.expand_path("~/.vim/swap")
     mkdir_p File.expand_path("~/.vim/undo")
+
+    mkdir_p File.expand_path("~/.vim/autoload")
+    plugvim_path = File.expand_path("~/.vim/autoload/plug.vim")
+    plugvim_url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+    Open3.popen3("curl -fLo #{plugvim_path} --create-dirs #{plugvim_url}") { |stdin, stdout, stderr| }
+    sh "vim +PlugUpdate +qall now"
   end
 
-  task :all => [:tmux]
+  task :all => [:tmux, :vim]
 end
 
 task :default => "install:all"
