@@ -40,6 +40,12 @@ def link_file(src_filename, symlink_name)
   ln_s src_path, symlink_path, :verbose => true
 end
 
+BASH_DOTFILES = {
+  "bashrc" => "~/.bashrc",
+  "bashrc" => "~/.bash_profile",
+  "bashrc" => "~/.profile"
+}
+
 TMUX_DOTFILES = {
   "tmux.conf" => "~/.tmux.conf",
   "tmux.conf.osx" => "~/.tmux.conf.osx"
@@ -51,6 +57,13 @@ VIM_DOTFILES = {
 }
 
 namespace :install do
+  task :bash do
+    step "install bash dot files"
+    BASH_DOTFILES.each do |src, dst|
+      link_file src, dst
+    end
+  end
+
   task :tmux do
     step "install tmux dot files"
     TMUX_DOTFILES.each do |src, dst|
@@ -75,7 +88,7 @@ namespace :install do
     sh "vim +PlugUpdate +qall now"
   end
 
-  task :all => [:tmux, :vim]
+  task :all => [:bash, :tmux, :vim]
 end
 
 task :default => "install:all"
