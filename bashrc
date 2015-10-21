@@ -14,6 +14,8 @@ add_path $HOME/jglievano/bin
 add_path $HOME/.rbenv/bin
 add_path $HOME/.rbenv/plugins/ruby-build/bin
 add_path $HOME/.homebrew/bin
+# Set Postgres.app.
+add_path /Applications/Postgres.app/Contents/Versions/9.4/bin
 
 # If kaleidoscope in installed then set as diff tool for P4.
 type -P ksdiff &>/dev/null && export P4DIFF=/usr/local/bin/ksdiff
@@ -27,6 +29,7 @@ if [ -f "/Applications/MacVim.app/Contents/MacOS/Vim" ]; then
   alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 fi
 
+
 export ALTERNATE_EDITOR=""
 export VISUAL="vim"
 export EDITOR="vim"
@@ -35,3 +38,6 @@ export EDITOR="vim"
 if [ -e "$HOME/.bashrc.local" ]; then
   source "$HOME/.bashrc.local"
 fi
+
+# added by Anaconda 2.3.0 installer
+export PATH="/Users/gabriell/anaconda/bin:$PATH"
