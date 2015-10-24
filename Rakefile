@@ -41,9 +41,7 @@ def link_file(src_filename, symlink_name)
 end
 
 BASH_DOTFILES = {
-  "bashrc" => "~/.bashrc",
-  "bashrc" => "~/.bash_profile",
-  "bashrc" => "~/.profile"
+  "bashrc" => ["~/.bashrc", "~/.bash_profile", "~/.profile"]
 }
 
 TMUX_DOTFILES = {
@@ -60,7 +58,13 @@ namespace :install do
   task :bash do
     step "install bash dot files"
     BASH_DOTFILES.each do |src, dst|
-      link_file src, dst
+      if dst.kind_of?(Array)
+        dst.each do |d|
+          link_file src, d
+        end
+      else
+        link_file src, dst
+      end
     end
   end
 

@@ -12,7 +12,6 @@ Plug 'rking/ag.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
-Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/Align'

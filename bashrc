@@ -1,4 +1,4 @@
-export PS1="\n\[\e[36m\]\u@\h:\W\$ \[\e[0m"
+export PS1="\n\[\e[36m\]\u@\h \[\e[31m\]\W\[\e[36m\] \$ \[\e[0m"
 
 function add_path {
   # Check to see if the arg is in PATH.
