@@ -14,8 +14,6 @@ add_path $HOME/jglievano/bin
 add_path $HOME/.rbenv/bin
 add_path $HOME/.rbenv/plugins/ruby-build/bin
 add_path $HOME/.homebrew/bin
-# Set Postgres.app.
-add_path /Applications/Postgres.app/Contents/Versions/9.4/bin
 
 # If kaleidoscope in installed then set as diff tool for P4.
 type -P ksdiff &>/dev/null && export P4DIFF=/usr/local/bin/ksdiff
@@ -37,6 +35,12 @@ export EDITOR="vim"
 # .bashrc.local is the place to write any personalized configuration.
 if [ -e "$HOME/.bashrc.local" ]; then
   source "$HOME/.bashrc.local"
+fi
+
+# Lunchy.
+LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+if [ -f $LUNCHY_DIR/lunchy-completion.bash ]; then
+  . $LUNCHY_DIR/lunchy-completion.bash
 fi
 
 # added by Anaconda 2.3.0 installer
