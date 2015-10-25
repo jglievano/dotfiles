@@ -38,9 +38,11 @@ if [ -e "$HOME/.bashrc.local" ]; then
 fi
 
 # Lunchy.
-LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
-if [ -f $LUNCHY_DIR/lunchy-completion.bash ]; then
-  . $LUNCHY_DIR/lunchy-completion.bash
+if which lunchy > /dev/null; then
+  LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+  if [ -f $LUNCHY_DIR/lunchy-completion.bash ]; then
+    . $LUNCHY_DIR/lunchy-completion.bash
+  fi
 fi
 
 # added by Anaconda 2.3.0 installer
