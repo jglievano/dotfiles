@@ -9,11 +9,13 @@ function add_path {
     fi
   fi
 }
+add_path /usr/local/go/bin
 add_path $HOME/bin
 add_path $HOME/jglievano/bin
 add_path $HOME/.rbenv/bin
 add_path $HOME/.rbenv/plugins/ruby-build/bin
 add_path $HOME/.homebrew/bin
+add_path $HOME/anaconda/bin
 
 # If kaleidoscope in installed then set as diff tool for P4.
 type -P ksdiff &>/dev/null && export P4DIFF=/usr/local/bin/ksdiff
@@ -45,8 +47,15 @@ if which lunchy > /dev/null; then
   fi
 fi
 
-# added by Anaconda 2.3.0 installer
-export PATH="/Users/gabriell/anaconda/bin:$PATH"
+# Go-lang.
+export GOPATH=$HOME/jglievano/go
+alias god="cd $GOPATH"
+
+# Enki.
+export ENKIPATH=$HOME/jglievano
 
 # Aliases.
 alias bex="bundle exec"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
