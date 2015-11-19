@@ -15,6 +15,7 @@ add_path $HOME/jglievano/bin
 add_path $HOME/.rbenv/bin
 add_path $HOME/.rbenv/plugins/ruby-build/bin
 add_path $HOME/.homebrew/bin
+add_path $HOME/.homebrew/opt/go/libexec/bin
 add_path $HOME/anaconda/bin
 
 # If kaleidoscope in installed then set as diff tool for P4.
@@ -49,6 +50,7 @@ fi
 
 # Go-lang.
 export GOPATH=$HOME/jglievano/go
+add_path $GOPATH/bin
 alias god="cd $GOPATH"
 
 # Enki.
