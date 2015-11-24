@@ -1,25 +1,34 @@
-#!/usr/bin/env bash
-
 step() {
-  line="-----------------------------------------------"
+  line="---------------------------"
   STEP_NAME=$1
   printf '\e[32m-- %s %s\e[0m\n' $STEP_NAME "${line:${#STEP_NAME}}"
 }
 
-step "Install Bash dotfiles"
-ln -s bashrc ~/.{bashrc,bash_profile,profile}
+link() {
+  SRC=$1; shift
+  for symlink in $@; do
+    printf 'Create symlink of %s at %s\n' $SRC $symlink
+    if [ -f $symlink ]; then
+      rm $symlink
+    fi
+    ln -s "`pwd`/$SRC" $symlink
+  done
+}
 
-step "Install Tmux dotfiles"
-ln -s tmux.conf ~/.tmux.conf
-ln -s tmux.conf.osx ~/.tmux.conf.osx
+step "Bash"
+link bashrc ~/.{bashrc,bash_profile,profile}
 
-step "Install Vim dotfiles"
-ln -s vimrc ~/.vimrc
-ln -s vimrc.bundles ~/.vimrc.bundles
+step "Tmux"
+link tmux.conf ~/.tmux.conf
+link tmux.conf.osx ~/.tmux.conf.osx
 
-step "Make Vim required paths"
+step "Vim"
+link vimrc ~/.vimrc
+link vimrc.bundles ~/.vimrc.bundles
+
+step "Mkdir"
 mkdir -pv ~/.vim/{backup,swap,undo,autoload}
 
-step "Install Vim Plug"
+step "VimPlug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +PlugUpdate +qall now

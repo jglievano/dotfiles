@@ -11,7 +11,7 @@ function add_path {
 }
 add_path /usr/local/go/bin
 add_path $HOME/bin
-add_path $HOME/jglievano/bin
+add_path $HOME/enki/bin
 add_path $HOME/.rbenv/bin
 add_path $HOME/.rbenv/plugins/ruby-build/bin
 add_path $HOME/.homebrew/bin

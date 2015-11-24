@@ -1,2 +1,2 @@
 all:
-	./setup.sh
+	bash setup.sh
