@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-function step {
+step() {
   line="-----------------------------------------------"
   STEP_NAME=$1
   printf '\e[32m-- %s %s\e[0m\n' $STEP_NAME "${line:${#STEP_NAME}}"
