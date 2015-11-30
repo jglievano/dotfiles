@@ -49,7 +49,7 @@ if which lunchy > /dev/null; then
 fi
 
 # Go-lang.
-export GOPATH=$HOME/jglievano/go
+export GOPATH=$HOME/go
 add_path $GOPATH/bin
 alias god="cd $GOPATH"
 
