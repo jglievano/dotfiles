@@ -54,8 +54,6 @@ set wildignore=log/**,node_module/**,target/**,tmp/**,*.rdc
 set wildmenu       " Enables usage of autocompletion using 'wildchar'
 set wildmode=list:longest,full " List completions, previous completions
 
-colorscheme molokai
-
 " Keyboard shortcuts
 let mapleader = ','
 nnoremap <C-h> <C-w>h

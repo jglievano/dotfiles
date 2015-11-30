@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'ajh17/VimCompletesMe'
 Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
 Plug 'austintaylor/vim-indentobject'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
