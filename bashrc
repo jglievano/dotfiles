@@ -1,7 +1,7 @@
 if [ -n "$TMUX" ]; then
   SESSION_NAME=`tmux display-message -p '#S'`
 else
-  SESSION_NAME=`hostname`
+  SESSION_NAME=`scutil --get ComputerName`
 fi
 
 export PS1="\n\[\e[36m\]\u@${SESSION_NAME} \[\e[31m\]\W\[\e[36m\] \$ \[\e[0m"
