@@ -1,4 +1,10 @@
-export PS1="\n\[\e[36m\]\u@\h \[\e[31m\]\W\[\e[36m\] \$ \[\e[0m"
+if [ -n "$TMUX" ]; then
+  SESSION_NAME=`tmux display-message -p '#S'`
+else
+  SESSION_NAME=`hostname`
+fi
+
+export PS1="\n\[\e[36m\]\u@${SESSION_NAME} \[\e[31m\]\W\[\e[36m\] \$ \[\e[0m"
 
 function add_path {
   # Check to see if the arg is in PATH.
