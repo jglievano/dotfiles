@@ -63,6 +63,7 @@ alias god="cd $GOPATH"
 export ENKIPATH=$HOME/jglievano
 
 # Aliases.
+alias l="ls -lA"
 alias bex="bundle exec"
 
 ### Added by the Heroku Toolbelt
