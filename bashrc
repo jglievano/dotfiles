@@ -64,6 +64,8 @@ export ENKIPATH=$HOME/jglievano
 
 # Aliases.
 alias l="ls -lA"
+alias gs="git status -s -uno"
+alias ga="git add -A && git commit -m"
 alias bex="bundle exec"
 
 ### Added by the Heroku Toolbelt
