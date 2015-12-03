@@ -65,7 +65,7 @@ export ENKIPATH=$HOME/jglievano
 # Aliases.
 alias l="ls -lA"
 alias gs="git status -s"
-alias ga="git add -A && git commit -m"
+alias ga="git add -A && git commit"
 alias gp="git push"
 alias bex="bundle exec"
 
