@@ -1,0 +1,100 @@
+set from="jglievano@fastmail.com"
+
+# Folders.
+set folder = ~/.mail
+set alias_file = ~/.mutt/alias
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+set mailcap_path = ~/.mutt/mailcap
+set tmpdir = ~/.mutt/temp
+set signature = ~/.mutt/sig
+
+# Basic Options.
+set wait_key = no
+set mbox_type = Maildir
+set timeout = 3
+set mail_check = 0
+set delete
+unset confirmappend
+set quit
+unset mark_old
+set pipe_decode
+set thorough_search
+
+# Status Bar.
+set status_chars = " *%A"
+set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
+# Account Settings.
+set spoolfile="+fastmail/INBOX"
+mailboxes +fastmail/INBOX \
+          +fastmail/INBOX.Archive \
+          +fastmail/INBOX.Sent \
+          +fastmail/INBOX.Drafts
+set mbox = "+fastmail/INBOX.Archive"
+set postponed = "+fastmail/INBOX.Drafts"
+
+set record = "+fastmail/INBOX.Sent"
+
+# Index view options.
+set date_format = "%m/%d"
+set index_format = "[%Z]  %D  %-20.20F  %s"
+set sort = threads
+set sort_aux = reverse-last-date-received
+set uncollapse_jump
+set sort_re
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+
+# Index key bindings.
+bind index R group-reply
+bind index <tab> sync-mailbox
+bind index <space> collapse-thread
+
+macro index O "<shell-escape>offlineimap<enter>" "run offlineimap to sync all mail"
+macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
+
+# Pager view options.
+set pager_index_lines = 10
+set pager_context = 3
+set pager_stop
+set menu_scroll
+set tilde
+unset markers
+
+set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+alternative_order text/plain text/enriched text/html
+
+# Pager key bindings.
+bind pager k previous-line
+bind pager j next-line
+bind pager gg top
+bind pager G bottom
+bind pager R group-reply
+
+# View attachments properly.
+bind attach <return> view-mailcap
+
+macro pager \Cu "|urlview<enter>" "call urlview to open links"
+
+# Theme.
+source ~/.mutt/themes/solarized/mutt-colors-solarized-light-16.muttrc
+
+# Compose view options.
+set realname = "Gabriel Lievano"
+set envelope_from
+set sig_dashes
+set edit_headers
+set fast_reply
+set askcc
+set fcc_attach
+unset mime_forward
+set forward_format = "Fwd: %s"
+set forward_decode
+set attribution = "On %d, %n wrote:"
+set reply_to
+set reverse_name
+set include
+set forward_quote
+
+set editor = "vim"
