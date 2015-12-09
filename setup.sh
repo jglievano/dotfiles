@@ -8,9 +8,7 @@ link() {
   SRC=$1; shift
   for symlink in $@; do
     printf 'Create symlink of %s at %s\n' $SRC $symlink
-    if [ -h $symlink ]; then
-      rm $symlink
-    fi
+    [ ! -f $symlink ] || rm $symlink
     ln -s "`pwd`/$SRC" $symlink
   done
 }
@@ -23,12 +21,21 @@ link tmux.conf ~/.tmux.conf
 link tmux.conf.osx ~/.tmux.conf.osx
 
 step "Vim"
+mkdir -pv ~/.vim/{backup,swap,undo,autoload}
 link vimrc ~/.vimrc
 link vimrc.bundles ~/.vimrc.bundles
-
-step "Mkdir"
-mkdir -pv ~/.vim/{backup,swap,undo,autoload}
 
 step "VimPlug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +PlugUpdate +qall now
+
+step "Mutt"
+mkdir -pv ~/.mutt/{alias,cache/headers,cache/bodies,certificates,temp,sig}
+mkdir -pv ~/.mutt/themes/solarized
+link muttrc ~/.muttrc
+link mutt/themes/solarized/mutt-colors-solarized-light-16.muttrc ~/.mutt/themes/solarized/mutt-colors-solarized-light-16.muttrc
+link mutt/mailcap ~/.mutt/mailcap
+
+step "OfflineIMAP"
+[ -f ~/.offlineimaprc ] || cp offlineimaprc ~/.offlineimaprc
+link mutt/offlineimap.py ~/.mutt/offlineimap.py
