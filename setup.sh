@@ -35,6 +35,7 @@ mkdir -pv ~/.mutt/themes/solarized
 link muttrc ~/.muttrc
 link mutt/themes/solarized/mutt-colors-solarized-light-16.muttrc ~/.mutt/themes/solarized/mutt-colors-solarized-light-16.muttrc
 link mutt/mailcap ~/.mutt/mailcap
+link mutt/view_attachment.sh ~/.mutt/view_attachment.sh
 
 step "OfflineIMAP"
 [ -f ~/.offlineimaprc ] || cp offlineimaprc ~/.offlineimaprc
