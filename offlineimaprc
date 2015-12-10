@@ -1,6 +1,7 @@
 [general]
 ui = basic
 accounts = FastMail
+#pythonfile=~/.mutt/offlineimap.py
 
 [Account FastMail]
 localrepository = LocalFM
@@ -10,17 +11,27 @@ status_backend = sqlite
 [Repository LocalFM]
 type = Maildir
 localfolders = ~/.mail/fastmail
+nametrans = lambda folder: {'drafts': 'INBOX.Drafts',
+                            'sent': 'INBOX.Sent',
+                            'archive': 'INBOX.Archive',
+                            'trash': 'INBOX.Trash'
+                            }.get(folder, folder)
 
 [Repository RemoteFM]
 type = IMAP
 remotehost = mail.messagingengine.com
 remoteport = 993
-#remoteuser = username
-#remotepassfile = ~/.password
+#remoteuser = username@mailhost.com
+#remotepassfile = ~/.passwordfile
 holdconnectionopen = yes
 ssl = yes
 cert_fingerprint = 958b1601563aef92607a41eb5bad22e3cace8431
 realdelete = no
 readonly = True
 expunge = no
+nametrans = lambda folder: {'INBOX.Drafts': 'drafts',
+                            'INBOX.Sent': 'sent',
+                            'INBOX.Trash': 'trash',
+                            'INBOX.Archive': 'archive',
+                            }.get(folder, folder)
 folderfilter = lambda foldername: foldername not in ['INBOX.Trash']

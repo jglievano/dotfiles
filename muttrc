@@ -29,13 +29,13 @@ set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)
 # Account Settings.
 set spoolfile="+fastmail/INBOX"
 mailboxes +fastmail/INBOX \
-          +fastmail/INBOX.Archive \
-          +fastmail/INBOX.Sent \
-          +fastmail/INBOX.Drafts
-set mbox = "+fastmail/INBOX.Archive"
-set postponed = "+fastmail/INBOX.Drafts"
+          +fastmail/archive \
+          +fastmail/sent \
+          +fastmail/drafts
+set mbox = "+fastmail/archive"
+set postponed = "+fastmail/drafts"
 
-set record = "+fastmail/INBOX.Sent"
+set record = "+fastmail/sent"
 
 # Index view options.
 set date_format = "%m/%d"

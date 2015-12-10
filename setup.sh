@@ -40,3 +40,7 @@ link mutt/view_attachment.sh ~/.mutt/view_attachment.sh
 step "OfflineIMAP"
 [ -f ~/.offlineimaprc ] || cp offlineimaprc ~/.offlineimaprc
 link mutt/offlineimap.py ~/.mutt/offlineimap.py
+
+step "MSMTP"
+link DigiCertHighAssuranceCA-3.pem ~/.DigiCertHighAssuranceCA-3.pem
+link msmtprc ~/.msmtprc
