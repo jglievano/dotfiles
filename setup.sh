@@ -38,7 +38,7 @@ link mutt/mailcap ~/.mutt/mailcap
 link mutt/view_attachment.sh ~/.mutt/view_attachment.sh
 
 step "OfflineIMAP"
-mkdir ~.mail
+mkdir -pv ~/.mail/fastmail
 [ -f ~/.offlineimaprc ] || cp offlineimaprc ~/.offlineimaprc
 link mutt/offlineimap.py ~/.mutt/offlineimap.py
 
