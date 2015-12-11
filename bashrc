@@ -59,9 +59,6 @@ export GOPATH=$HOME/go
 add_path $GOPATH/bin
 alias god="cd $GOPATH"
 
-# Enki.
-export ENKIPATH=$HOME/jglievano
-
 # Aliases.
 alias l="ls -lA"
 alias gs="git status -s -b"
