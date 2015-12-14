@@ -33,14 +33,21 @@ step "Mutt"
 mkdir -pv ~/.mutt/{alias,cache/headers,cache/bodies,certificates,temp,sig}
 mkdir -pv ~/.mutt/themes/solarized
 link muttrc ~/.muttrc
-link mutt/themes/solarized/mutt-colors-solarized-light-16.muttrc ~/.mutt/themes/solarized/mutt-colors-solarized-light-16.muttrc
+link mutt/themes/solarized/mutt-colors-solarized-dark-16.muttrc ~/.mutt/themes/solarized/mutt-colors-solarized-dark-16.muttrc
 link mutt/mailcap ~/.mutt/mailcap
 link mutt/view_attachment.sh ~/.mutt/view_attachment.sh
 
 step "OfflineIMAP"
+mkdir -pv ~/.mail/fastmail
 [ -f ~/.offlineimaprc ] || cp offlineimaprc ~/.offlineimaprc
 link mutt/offlineimap.py ~/.mutt/offlineimap.py
 
 step "MSMTP"
 link DigiCertHighAssuranceCA-3.pem ~/.DigiCertHighAssuranceCA-3.pem
 link msmtprc ~/.msmtprc
+
+echo "Remember to install:"
+echo " - offlineimap"
+echo " - mutt"
+echo " - msmtp"
+echo " - urlview"
