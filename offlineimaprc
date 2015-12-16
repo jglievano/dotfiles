@@ -1,7 +1,6 @@
 [general]
 ui = basic
 accounts = FastMail
-#pythonfile=~/.mutt/offlineimap.py
 
 [Account FastMail]
 localrepository = LocalFM

@@ -1,18 +1,15 @@
 #!/usr/bin/python
 
-import re, subprocess
+import subprocess
+import os
+from os.path import expanduser
 
-def get_keychain_pass(account = None, server = None):
-    params = {
-            'security': '/usr/bin/security',
-            'command': 'find-internet-password',
-            'account': account,
-            'server': server,
-            'keychain': '/Users/gabriell/Library/Keychains/login.keychain',
-            }
-    command = "sudo -u gabriell %(security)s -v %(command)s -g -a %(account)s -s %(server)s %(keychain)s" % params
-    output = subprocess.check_output(command, shell = True, stderr = subprocess.STDOUT)
-    outtext = [l for l in output.splitlines()
-            if l.startswith('password: ')][0]
-
-    return re.match(r'password: "(.*)"', outtext).group(1)
+def mailpasswd(acct):
+    acct = os.path.basename(acct)
+    path = "%s/.%s.gpg" % (expanduser("~"), acct)
+    print "%s" % path
+    args = ["gpg", "--quiet", "--for-your-eyes-only", "--no-tty", "-d", path]
+    try:
+        return subprocess.check_output(args).strip()
+    except subprocess.CalledProcessError:
+        return ""
