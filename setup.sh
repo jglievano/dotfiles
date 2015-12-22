@@ -43,7 +43,7 @@ mkdir -pv ~/.mail/fastmail
 link mutt/offlineimap.py ~/.mutt/offlineimap.py
 
 step "MSMTP"
-link DigiCertHighAssuranceCA-3.pem ~/.DigiCertHighAssuranceCA-3.pem
+link CA-bundle.crt ~/.CA-bundle.crt
 link msmtprc ~/.msmtprc
 
 echo "Remember to install:"

@@ -1,5 +1,9 @@
 set from="jglievano@fastmail.com"
 
+set sendmail = "`which msmtp` -a fastmail"
+set sendmail_wait = 0
+unset record
+
 # Folders.
 set folder = ~/.mail
 set alias_file = ~/.mutt/alias
@@ -34,8 +38,6 @@ mailboxes +fastmail/INBOX \
           +fastmail/drafts
 set mbox = "+fastmail/archive"
 set postponed = "+fastmail/drafts"
-
-set record = "+fastmail/sent"
 
 # Index view options.
 set date_format = "%m/%d"
@@ -78,7 +80,7 @@ bind attach <return> view-mailcap
 macro pager \Cu "|urlview<enter>" "call urlview to open links"
 
 # Theme.
-source ~/.mutt/themes/solarized/mutt-colors-solarized-dark-16.muttrc
+#source ~/.mutt/themes/solarized/mutt-colors-solarized-dark-16.muttrc
 
 # Compose view options.
 set realname = "Gabriel Lievano"
