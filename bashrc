@@ -29,7 +29,7 @@ type -P ksdiff &>/dev/null && export P4DIFF=/usr/local/bin/ksdiff
 type -P ksdiff &>/dev/null && export P4MERGE=/usr/local/bin/ksdiff
 
 # If rbenv is installed the initialize.
-if which rbenv > /dev/null; then eval "$(rbenv init - sh)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
 # Set alias for Vim if MacVim is installed.
 if [ -f "/Applications/MacVim.app/Contents/MacOS/Vim" ]; then
