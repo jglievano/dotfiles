@@ -79,9 +79,6 @@ bind attach <return> view-mailcap
 
 macro pager \Cu "|urlview<enter>" "call urlview to open links"
 
-# Theme.
-#source ~/.mutt/themes/solarized/mutt-colors-solarized-dark-16.muttrc
-
 # Compose view options.
 set realname = "Gabriel Lievano"
 set envelope_from
