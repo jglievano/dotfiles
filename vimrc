@@ -115,24 +115,6 @@ vnoremap p "_dP
 
 " Ctrl-P
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = {
-    \ 'types': {
-      \ 1: ['.git', 'cd %s && git ls-files --cached --exclude-standard --others'],
-      \ },
-    \ 'fallback': 'ag %s -l --nocolor --hidden -g ""'
-    \ }
-else
-  let g:ctrlp_user_command = {
-    \ 'types': {
-      \ 1: ['.git', 'cd %s && git ls-files --cached --exclude-standard --others'],
-      \ },
-    \ 'fallback': 'find %s -type f'
-    \ }
-endif
-let g:ctrlp_match_func = { 'match': 'matcher#cmatch' }
 
 " Syntastic
 set statusline+=%#warningmsg#  " Add Error ruler.
