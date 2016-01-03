@@ -37,7 +37,6 @@ if [ -f "/Applications/MacVim.app/Contents/MacOS/Vim" ]; then
   alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 fi
 
-
 export ALTERNATE_EDITOR=""
 export VISUAL="vim"
 export EDITOR="vim"

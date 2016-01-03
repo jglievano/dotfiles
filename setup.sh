@@ -49,8 +49,13 @@ step "MSMTP"
 link CA-bundle.crt ~/.CA-bundle.crt
 link msmtprc ~/.msmtprc
 
+step "Spacemacs"
+link spacemacs ~/.spacemacs
+
 echo "Remember to install:"
 echo " - offlineimap"
 echo " - mutt"
 echo " - msmtp"
 echo " - urlview"
+echo " - spacemacs:"
+echo "   git clone --recursive https://github.com/syl20bnr/spacemacs ~/.emacs.d"
