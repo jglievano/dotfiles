@@ -25,6 +25,7 @@ values."
      ;; ----------------------------------------------------------------
      ;; auto-completion
      ;; better-defaults
+     clojure
      emacs-lisp
      osx
      git
@@ -41,16 +42,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages
-   '(
-     paredit
-     clojure-mode
-     clojure-mode-extra-font-locking
-     cider
-     ido-ubiquitous
-     smex
-     rainbow-delimiters
-     tagedit
+   dotspacemacs-additional-packages '(
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
