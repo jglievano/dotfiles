@@ -23,7 +23,7 @@ add_path $HOME/.rbenv/bin
 add_path $HOME/.rbenv/plugins/ruby-build/bin
 add_path $HOME/.homebrew/bin
 add_path $HOME/.homebrew/opt/go/libexec/bin
-add_path $HOME/anaconda/bin
+add_path $HOME/anaconda2/bin
 
 # If kaleidoscope in installed then set as diff tool for P4.
 type -P ksdiff &>/dev/null && export P4DIFF=/usr/local/bin/ksdiff

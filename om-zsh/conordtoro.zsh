@@ -36,6 +36,6 @@ alias gp="git push"
 alias bex="bundle exec"
 command -v mvim >/dev/null && alias vim="mvim -v"
 
-jglievano=~/enki/src/jglievano
-dotfiles=~/enki/src/jglievano/dotfiles
-triumvirate=~/enki/src/jglievano/triumvirate
+if [[ -e ~/.zshrc.local ]]; then
+  source ~/.zshrc.local
+fi

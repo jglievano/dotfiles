@@ -97,3 +97,6 @@ set include
 set forward_quote
 
 set editor = "vim"
+
+# Theme.
+source ~/.mutt/themes/solarized/mutt-colors-solarized-dark-16.muttrc
