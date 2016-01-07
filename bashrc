@@ -1,4 +1,3 @@
-echo "hello"
 if [ -n "$TMUX" ]; then
   SESSION_NAME=`tmux display-message -p '#S'`
 else
