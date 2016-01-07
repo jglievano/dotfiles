@@ -8,7 +8,7 @@ link() {
   SRC=$1; shift
   for symlink in $@; do
     printf 'Create symlink of %s at %s\n' $SRC $symlink
-    [ ! -f $symlink ] || rm $symlink
+    [ ! -e $symlink ] || rm $symlink
     ln -s "`pwd`/$SRC" $symlink
   done
 }
