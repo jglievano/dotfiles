@@ -18,6 +18,7 @@ link bashrc ~/.{bashrc,bash_profile,profile}
 
 step "Zsh"
 link om-zsh ~/.om-zsh
+link zshrc ~/.zshrc
 
 step "Tmux"
 link tmux.conf ~/.tmux.conf
