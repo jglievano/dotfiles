@@ -34,6 +34,12 @@ alias gs="git status -s -b"
 alias ga="git add -A && git commit"
 alias gp="git push"
 alias bex="bundle exec"
+alias py="$HOME/anaconda2/bin/python"
+alias ipy="$HOME/anaconda2/bin/ipython"
+alias em="emacsclient -t"
+alias sem="sudo emacsclient -t"
+alias emc="emacsclient -c -a emacs"
+alias stopem="emacsclient -e '(kill-emacs)'"
 command -v mvim >/dev/null && alias vim="mvim -v"
 
 if [[ -e ~/.zshrc.local ]]; then
