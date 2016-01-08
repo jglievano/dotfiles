@@ -9,6 +9,7 @@ function add_path {
 add_path /usr/local/go/bin
 add_path $HOME/bin
 add_path $HOME/enki/bin
+add_path $HOME/.emacs.d/bin
 add_path $HOME/.rbenv/bin
 add_path $HOME/.rbenv/plugins/ruby-build/bin
 add_path $HOME/.homebrew/bin
@@ -36,10 +37,6 @@ alias gp="git push"
 alias bex="bundle exec"
 alias py="$HOME/anaconda2/bin/python"
 alias ipy="$HOME/anaconda2/bin/ipython"
-alias em="emacsclient -t"
-alias sem="sudo emacsclient -t"
-alias emc="emacsclient -c -a emacs"
-alias stopem="emacsclient -e '(kill-emacs)'"
 command -v mvim >/dev/null && alias vim="mvim -v"
 
 if [[ -e ~/.zshrc.local ]]; then
