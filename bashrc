@@ -64,6 +64,3 @@ alias gs="git status -s -b"
 alias ga="git add -A && git commit"
 alias gp="git push"
 alias bex="bundle exec"
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
