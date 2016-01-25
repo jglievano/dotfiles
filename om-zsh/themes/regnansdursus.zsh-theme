@@ -4,7 +4,7 @@ prompt_setup_regnansdursus() {
   ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}d%{$reset_color%}"
   ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-  base_prompt="%{$fg[yellow]%}%n%{$reset_color%}%{$fg[cyan]%}@%{$reset_color%}%{$fg[yellow]%}%m%{$reset_color%}
+  base_prompt="%{$fg[yellow]%}%n@%m%{$reset_color%}
 %{$fg[yellow]%}%0~%{$reset_color%}%{$fg[red]%}%{$reset_color%}"
   post_prompt=' %{$fg[cyan]%}$%{$reset_color%} '
 
