@@ -6,7 +6,7 @@ prompt_setup_regnansdursus() {
 
   base_prompt="%{$fg[yellow]%}%n@%m%{$reset_color%}
 %{$fg[yellow]%}%0~%{$reset_color%}%{$fg[red]%}%{$reset_color%}"
-  post_prompt=' %{$fg[cyan]%}$%{$reset_color%} '
+  post_prompt=' %{$fg[yellow]%}$%{$reset_color%} '
 
   base_prompt_nocolor=$(echo "$base_prompt" | perl -pe "s/%\{[^}]+\}//g")
   post_prompt_nocolor=$(echo "$post_prompt" | perl -pe "s/%\{[^}]+\}//g")
