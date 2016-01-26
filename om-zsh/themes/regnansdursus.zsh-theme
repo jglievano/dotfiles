@@ -5,16 +5,16 @@ prompt_setup_regnansdursus() {
   ZSH_THEME_GIT_PROMPT_CLEAN=""
 
   base_prompt="%{$fg[yellow]%}%n@%m%{$reset_color%}
-%{$fg[yellow]%}%0~%{$reset_color%}%{$fg[red]%}%{$reset_color%}"
-  post_prompt='%{$fg[yellow]%}$%{$reset_color%} '
+%{$fg[red]%}%0~%{$reset_color%}%{$fg[red]%}%{$reset_color%}"
+  post_prompt='%{$fg[red]%}$%{$reset_color%} '
 
   precmd_functions+=(prompt_regnansdursus_precmd)
 }
 
 prompt_regnansdursus_precmd() {
-  local gitinfo=$(git_prompt_info)
+  local gitprompt=$(git_super_status)
   local nl=$'\n%{\r%}';
-  PROMPT="$nl$base_prompt $gitinfo$post_prompt"
+  PROMPT="$nl$base_prompt $gitprompt$post_prompt"
 }
 
 prompt_setup_regnansdursus

@@ -35,7 +35,7 @@ DISABLE_AUTO_TITLE="true"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -55,6 +55,9 @@ plugins=(git)
 
 export PATH="/usr/local/git/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
+
+GIT_PROMPT_EXECUTABLE="haskell"
+source ~/enki/src/olivierverdier/zsh-git-prompt/zshrc.sh
 
 source $ZSH/oh-my-zsh.sh
 
