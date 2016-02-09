@@ -56,9 +56,6 @@ plugins=(git)
 export PATH="/usr/local/git/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-GIT_PROMPT_EXECUTABLE="haskell"
-source ~/enki/src/olivierverdier/zsh-git-prompt/zshrc.sh
-
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment

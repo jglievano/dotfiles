@@ -12,9 +12,8 @@ prompt_setup_regnansdursus() {
 }
 
 prompt_regnansdursus_precmd() {
-  local gitprompt=$(git_super_status)
   local nl=$'\n%{\r%}';
-  PROMPT="$nl$base_prompt $gitprompt$post_prompt"
+  PROMPT="$nl$base_prompt $post_prompt"
 }
 
 prompt_setup_regnansdursus
