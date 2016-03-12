@@ -30,7 +30,7 @@ set laststatus=2   " Always show status bar
 set list           " Show trailing whitespace
 set listchars=tab:▸\ ,eol:¬,trail:▫ " Display <Tab>s, <EOL>s, trails  nicer
 set modelines=0    " CVE-2007-2438
-set nonumber       " Show line numbers
+set number         " Show line numbers
 set ruler          " Show where you are
 set scrolloff=3    " Scroll up or down when there are 3 extra lines
 set shiftwidth=2   " Autoindent (<<, >>) with 2 spaces
@@ -45,6 +45,7 @@ set tabstop=2      " <Tab> counts for 2 spaces
 set term=xterm-256color
 set termencoding=utf-8
 set ttyfast        " Improves smoothness of redrawing
+set t_Co=256       " Make use of 256 terminal colors
 set undofile       " ...
 set undodir=~/.vim/undo// " Store undo files in specified directory
 set visualbell     " Use visual bell instead of beeping
