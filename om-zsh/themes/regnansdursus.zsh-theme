@@ -1,5 +1,5 @@
 prompt_setup_regnansdursus() {
-  prompt="%{$fg[red]%}%n@%m%0~ $ %{$reset_color%}"
+  prompt="%{$fg[red]%}%n@%1~ $ %{$reset_color%}"
   local nl=$'\n%{\r%}';
   PROMPT="$nl$prompt"
 }
