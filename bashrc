@@ -37,8 +37,8 @@ if [ -f "/Applications/MacVim.app/Contents/MacOS/Vim" ]; then
 fi
 
 export ALTERNATE_EDITOR=""
-export VISUAL="vim"
-export EDITOR="vim"
+export VISUAL="emacs"
+export EDITOR="emacs"
 
 # .bashrc.local is the place to write any personalized configuration.
 if [ -e "$HOME/.bashrc.local" ]; then
