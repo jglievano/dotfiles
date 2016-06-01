@@ -1,10 +1,4 @@
-if [ -n "$TMUX" ]; then
-  SESSION_NAME=`tmux display-message -p '#S'`
-else
-  SESSION_NAME=`hostname -s`
-fi
-
-export PS1="\n\[\e[36m\]\u@${SESSION_NAME} \[\e[31m\]\W\[\e[36m\] \$ \[\e[0m"
+export PS1="\n\[\e[36m\]\w \\$ \[\e[m\]"
 
 function add_path {
   # Check to see if the arg is in PATH.
@@ -17,6 +11,7 @@ function add_path {
 }
 add_path /usr/local/go/bin
 add_path $HOME/bin
+add_path $HOME/.emacs.d/bin
 add_path $HOME/enki/bin
 add_path $HOME/.rbenv/bin
 add_path $HOME/.rbenv/plugins/ruby-build/bin
@@ -37,21 +32,8 @@ if [ -f "/Applications/MacVim.app/Contents/MacOS/Vim" ]; then
 fi
 
 export ALTERNATE_EDITOR=""
-export VISUAL="emacs"
-export EDITOR="emacs"
-
-# .bashrc.local is the place to write any personalized configuration.
-if [ -e "$HOME/.bashrc.local" ]; then
-  source "$HOME/.bashrc.local"
-fi
-
-# Lunchy.
-if which lunchy > /dev/null; then
-  LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
-  if [ -f $LUNCHY_DIR/lunchy-completion.bash ]; then
-    . $LUNCHY_DIR/lunchy-completion.bash
-  fi
-fi
+export VISUAL=em
+export EDITOR=em
 
 # Go-lang.
 export GOPATH=$HOME/go
@@ -64,3 +46,8 @@ alias gs="git status -s -b"
 alias ga="git add -A && git commit"
 alias gp="git push"
 alias bex="bundle exec"
+
+# .bashrc.local is the place to write any personalized configuration.
+if [ -e "$HOME/.bashrc.local" ]; then
+  source "$HOME/.bashrc.local"
+fi
