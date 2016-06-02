@@ -41,6 +41,10 @@ add_path $GOPATH/bin
 alias god="cd $GOPATH"
 
 # Aliases.
+if [ -f "${HOME}/.homebrew/bin/emacs" ]; then
+  alias emacs="${HOME}/.homebrew/bin/emacs"
+  alias emacsclient="${HOME}/.homebrew/bin/emacsclient"
+fi
 alias l="ls -lA"
 alias gs="git status -s -b"
 alias ga="git add -A && git commit"
