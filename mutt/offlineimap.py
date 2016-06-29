@@ -4,8 +4,8 @@ import subprocess
 import os
 from os.path import expanduser
 
-def mailpasswd(acct):
-    acct = os.path.basename(acct)
+def mailpasswd(acct, domain="fastmail"):
+    acct = os.path.basename(acct + "_" + domain)
     path = "%s/.%s.gpg" % (expanduser("~"), acct)
     args = ["gpg", "--quiet", "--for-your-eyes-only", "--no-tty", "-d", path]
     try:
