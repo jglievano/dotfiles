@@ -88,6 +88,8 @@ let g:gitgutter_enabled = 0
 
 augroup extensionsgroup
   autocmd!
+  " ejs.
+  autocmd BufRead,BufNewFile *.ejs set filetype=html
   " fdoc is yaml.
   autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
   " md is markdown.

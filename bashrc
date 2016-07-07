@@ -45,6 +45,10 @@ add_path $GOPATH/bin
 alias god="cd $GOPATH"
 
 # Aliases.
+if [ -f "${HOME}/.homebrew/bin/emacs" ]; then
+  alias emacs="${HOME}/.homebrew/bin/emacs"
+  alias emacsclient="${HOME}/.homebrew/bin/emacsclient"
+fi
 alias l="ls -lA"
 alias gs="git status -s -b"
 alias ga="git add -A && git commit"
@@ -60,6 +64,3 @@ fi
 if [ -e "$HOME/.bashrc.local" ]; then
   source "$HOME/.bashrc.local"
 fi
-
-alias rg=/Users/gabriell/google/src/snapseed/google3/tools/osx/rg/rg.py
-alias setuprg=/Users/gabriell/google/src/snapseed/google3/googlemac/iPhone/GooglePlus/apps/photos/tulsi/rg/set_up_rg
