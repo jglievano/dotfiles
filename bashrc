@@ -1,6 +1,6 @@
 blue=$(tput setaf 4)
 reset=$(tput sgr0)
-export PS1="\[$blue\]>\[$reset\] "
+export PS1="\[$blue\]\w >\[$reset\] "
 
 function add_path {
   # Check to see if the arg is in PATH.
