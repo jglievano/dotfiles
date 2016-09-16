@@ -36,8 +36,8 @@ if [ -f "/Applications/MacVim.app/Contents/MacOS/Vim" ]; then
 fi
 
 export ALTERNATE_EDITOR=""
-export VISUAL=em
-export EDITOR=em
+export VISUAL=vim
+export EDITOR=vim
 
 # Go-lang.
 export GOPATH=$HOME/go
@@ -45,20 +45,11 @@ add_path $GOPATH/bin
 alias god="cd $GOPATH"
 
 # Aliases.
-if [ -f "${HOME}/.homebrew/bin/emacs" ]; then
-  alias emacs="${HOME}/.homebrew/bin/emacs"
-  alias emacsclient="${HOME}/.homebrew/bin/emacsclient"
-fi
 alias l="ls -lA"
 alias gs="git status -s -b"
 alias ga="git add -A && git commit"
 alias gp="git push"
 alias bex="bundle exec"
-
-# NixOS.
-if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
-  . $HOME/.nix-profile/etc/profile.d/nix.sh;
-fi
 
 # .bashrc.local is the place to write any personalized configuration.
 if [ -e "$HOME/.bashrc.local" ]; then
