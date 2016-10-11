@@ -12,11 +12,21 @@ function add_path {
   fi
 }
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export JGLDEV=$HOME/Developer
+#elif [[ "$OSTYPE" == "linux-gnu" ]]; then
+#elif [[ "$OSTYPE" == "cygwin" ]]; then
+#elif [[ "$OSTYPE" == "msys" ]]; then
+#elif [[ "$OSTYPE" == "win32" ]]; then
+#elif [[ "$OSTYPE" == "freebsd"* ]]; then
+else
+  export JGLDEV=$HOME/dev
+fi
+
 add_path /usr/local/bin
 add_path /usr/local/go/bin
 add_path $HOME/bin
 add_path $HOME/.emacs.d/bin
-add_path $HOME/enki/bin
 add_path $HOME/.rbenv/bin
 add_path $HOME/.rbenv/plugins/ruby-build/bin
 add_path $HOME/anaconda2/bin
