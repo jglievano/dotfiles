@@ -98,6 +98,7 @@ augroup extensionsgroup
   " gyp is python.
   autocmd BufRead,BufNewFile *.gyp set filetype=python
   autocmd BufRead,BufNewFile *.gypi set filetype=python
+  autocmd BufRead,BufNewFile BUILD set filetype=python
   " Needed to override matlab default.
   autocmd BufRead,BufNewFile *.m set filetype=objc
   " automatically rebalance windows on vim resize
