@@ -8,7 +8,7 @@ yellow="\[\033[33m\]"
 
 user=$(whoami)
 hostname=$(hostname)
-export PS1="${yellow}${user}${reset}@${blue}${hostname}${reset}:${yellow}\w${red} >${reset} "
+export PS1="${yellow}${user}${reset}@${blue}${hostname}${reset}:${red}\w >${reset} "
 
 function add_path {
   # Check to see if the arg is in PATH.
