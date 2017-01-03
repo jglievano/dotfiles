@@ -1,7 +1,5 @@
 # vim: set ft=sh:
 
-source ~/.fresh/build/shell.sh
-
 # UI colors.
 reset="\[\033[0m\]"
 blue="\[\033[34m\]"
@@ -10,7 +8,7 @@ yellow="\[\033[33m\]"
 
 user=$(whoami)
 hostname=$(hostname)
-export PS1="${blue}${user}${reset}@${red}${hostname}${reset}:${yellow}\w${red} >${reset} "
+export PS1="${yellow}${user}${reset}@${blue}${hostname}${reset}:${yellow}\w${red} >${reset} "
 
 function add_path {
   # Check to see if the arg is in PATH.
