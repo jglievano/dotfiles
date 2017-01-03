@@ -13,15 +13,20 @@ link() {
   done
 }
 
+step "Create required directories"
+mkdir -pv ~/.vim/{backup,swap,undo,autoload}
+mkdir -pv ~/bin
+
 step "Bash"
 link bashrc ~/.{bashrc,bash_profile,profile}
 
 step "Tmux"
+link bin/tm ~/bin/tm
+link bin/tm-ls ~/bin/tm-ls
 link tmux.conf ~/.tmux.conf
 link tmux.conf.osx ~/.tmux.conf.osx
 
 step "Vim"
-mkdir -pv ~/.vim/{backup,swap,undo,autoload}
 link vimrc ~/.vimrc
 link vimrc.bundles ~/.vimrc.bundles
 
