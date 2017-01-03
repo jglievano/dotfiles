@@ -1,14 +1,13 @@
 set -g pane-border-fg black
 set -g pane-active-border-fg brightred
 
-set -g status-utf8 on
 set -g status-justify left
 set -g status-bg default
 set -g status-fg colour12
 set -g status-interval 2
 
 set -g message-fg black
-set -g messaeg-bg yellow
+set -g message-bg yellow
 set -g message-command-fg blue
 set -g message-command-bg black
 
@@ -60,7 +59,7 @@ setw -g window-status-current-bg colour238
 setw -g window-status-current-attr bold
 setw -g window-status-current-format ' #I#[fg=colour250]:#[fg=colour255]#W#[fg=colour50]#F '
 
-setw -g window-status-fg coloru138
+setw -g window-status-fg colour138
 setw -g window-status-bg colour235
 setw -g window-status-attr none
 setw -g window-status-format ' #I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244]#F '
