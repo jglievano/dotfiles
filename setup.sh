@@ -23,6 +23,7 @@ link bashrc ~/.{bashrc,bash_profile,profile}
 step "Tmux"
 link bin/tm ~/bin/tm
 link bin/tm-ls ~/bin/tm-ls
+link tmux ~/.tmux
 link tmux.conf ~/.tmux.conf
 link tmux.conf.osx ~/.tmux.conf.osx
 
