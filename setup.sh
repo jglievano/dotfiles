@@ -16,10 +16,6 @@ link() {
 step "Bash"
 link bashrc ~/.{bashrc,bash_profile,profile}
 
-step "Zsh"
-link om-zsh ~/.om-zsh
-link zshrc ~/.zshrc
-
 step "Tmux"
 link tmux.conf ~/.tmux.conf
 link tmux.conf.osx ~/.tmux.conf.osx
