@@ -10,50 +10,54 @@ endif
 " Ensure ftdetect et al work
 filetype plugin indent on
 
-set autoindent     " Autoindents to indentation from previous line
-set autoread       " Reload files when changed on disk
-set backspace=indent,eol,start " More powerful backspacing
-set backupcopy=yes " Make a copy of the file and overwrite the original
-set backupdir=~/.vim/backup// " Store backup files in specified directory
-set clipboard=unnamed " Yank and paste with the system clipboard
-set completeopt=menu " Use a pop up menu to show completion options
-set cursorline     " Highlights the current line
-set directory=~/.vim/swap// " Store swapfiles in specified directory
+set autoindent
+set autoread
+set backspace=indent,eol,start
+set backupcopy=yes
+set backupdir=~/.vim/backup//
+set clipboard=unnamed
+set colorcolumn=80
+set completeopt=menu
+set cursorline
+set directory=~/.vim/swap//
 set encoding=utf-8
-set expandtab      " Insert spaces whenever <Tab> is pressed
+set expandtab
 set exrc
-set guioptions-=L  " Disable scrollbar in MacVim
-set hlsearch       " Highlight previous search
-set ignorecase     " case-insensitive search
-set incsearch      " Search as word is typed
-set laststatus=2   " Always show status bar
-set list           " Show trailing whitespace
-set listchars=tab:▸\ ,eol:¬,trail:▫ " Display <Tab>s, <EOL>s, trails  nicer
-set modelines=0    " CVE-2007-2438
-set number         " Show line numbers
-set ruler          " Show where you are
-set scrolloff=3    " Scroll up or down when there are 3 extra lines
-set shiftwidth=2   " Autoindent (<<, >>) with 2 spaces
-set showcmd        " Show command in the last line of the screen
-set showmatch      " Briefly show braket match
-set noshowmode     " Hide the default mode text
+set guioptions-=L
+set hlsearch
+set ignorecase
+set incsearch
+set laststatus=2
+set list
+set listchars=tab:▸\ ,eol:¬,trail:▫
+set modelines=0
+set number
+set ruler
+set scrolloff=3
 set secure
-set showtabline=2  " Always show tabline
-set smartcase      " case-sensitive search if any caps
-set softtabstop=2  " Number of spaces inserted when editing
-set tabstop=2      " <Tab> counts for 2 spaces
+set shiftwidth=2
+set showcmd
+set showmatch
+set noshowmode
+set secure
+set showtabline=2
+set smartcase
+set softtabstop=2
+set tabstop=2
 set term=xterm-256color
 set termencoding=utf-8
-set ttyfast        " Improves smoothness of redrawing
-set t_Co=256       " Make use of 256 terminal colors
-set undofile       " ...
-set undodir=~/.vim/undo// " Store undo files in specified directory
-set visualbell     " Use visual bell instead of beeping
-set wrap           " Display text by wrapping it
-set wildchar=<Tab> " Set completion character to <Tab>
+set ttyfast
+set t_Co=256
+set undofile
+set undodir=~/.vim/undo//
+set visualbell
+set wrap
+set wildchar=<Tab>
 set wildignore=log/**,node_module/**,target/**,tmp/**,*.rdc
-set wildmenu       " Enables usage of autocompletion using 'wildchar'
-set wildmode=list:longest,full " List completions, previous completions
+set wildmenu
+set wildmode=list:longest,full
+
+highlight ColorColumn ctermbg=darkgray
 
 " Keyboard shortcuts
 let mapleader = ','
@@ -81,9 +85,6 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 cnoremap w!! %!sudo tee > /dev/null %
 
-" Plugin settings
-let g:NERDSpaceDelims=1
-let NERDTreeQuitOnOpen=1
 let g:gitgutter_enabled = 0
 
 augroup extensionsgroup
@@ -107,28 +108,28 @@ augroup END
 
 " Fix cursor in TMUX
 if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  let &t_SI="\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI="\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  let &t_SI="\<Esc>]50;CursorShape=1\x7"
+  let &t_EI="\<Esc>]50;CursorShape=0\x7"
 endif
 
 " Don't copy the contents of an overwritten selection
 vnoremap p "_dP
 
 " Ctrl-P
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
+let g:ctrlp_match_window='bottom,order:btt,min:1,max:10,results:10'
 
 " Syntastic
-set statusline+=%#warningmsg#  " Add Error ruler.
+set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_loc_list_height=5
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-j>"
