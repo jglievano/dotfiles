@@ -15,9 +15,13 @@ function add_path {
   if [ "${PATH/$1}" = "$PATH" ]; then
     # Check to see if the arg's directory exists.
     if [ -d $1 ]; then
-      PATH=$1:$PATH
+      export PATH=$1:$PATH
     fi
   fi
+}
+
+function remove_path {
+  export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`;
 }
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -33,13 +37,13 @@ fi
 
 add_path /usr/local/bin
 add_path /usr/local/go/bin
-add_path $HOME/bin
 add_path $HOME/.emacs.d/bin
 add_path $HOME/.rbenv/bin
 add_path $HOME/.rbenv/plugins/ruby-build/bin
 add_path $HOME/anaconda2/bin
 add_path $HOME/.homebrew/bin
 add_path $HOME/.homebrew/opt/go/libexec/bin
+remove_path $HOME/bin
 
 # If kaleidoscope in installed then set as diff tool for P4.
 type -P ksdiff &>/dev/null && export P4DIFF=/usr/local/bin/ksdiff
@@ -73,3 +77,6 @@ alias bex="bundle exec"
 if [ -e "$HOME/.bashrc.local" ]; then
   source "$HOME/.bashrc.local"
 fi
+
+# Make sure $HOME/bin is on the top of $PATH.
+add_path $HOME/bin
