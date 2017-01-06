@@ -28,6 +28,7 @@ link tmux.conf ~/.tmux.conf
 link tmux.conf.osx ~/.tmux.conf.osx
 
 step "Emacs"
+link bin/m ~/bin/m
 link bin/em ~/bin/em
 link bin/startem ~/bin/startem
 link bin/stopem ~/bin/stopem
