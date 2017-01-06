@@ -27,6 +27,9 @@ link tmux ~/.tmux
 link tmux.conf ~/.tmux.conf
 link tmux.conf.osx ~/.tmux.conf.osx
 
+step "Emacs"
+link bin/em ~/bin/em
+
 step "Vim"
 link vimrc ~/.vimrc
 link vimrc.bundles ~/.vimrc.bundles
