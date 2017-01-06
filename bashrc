@@ -7,7 +7,7 @@ red="\[\033[31m\]"
 yellow="\[\033[33m\]"
 
 user=$(whoami)
-hostname=$(hostname)
+hostname=$(scutil --get ComputerName)
 export PS1="${yellow}${user}${reset}@${blue}${hostname}${reset}:${red}\w >${reset} "
 
 function add_path {
