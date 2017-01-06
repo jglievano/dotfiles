@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+server_ok() {
+  emacsclient -a "false" -e "(boundp 'server-process)"
+}
+
+if [ "t" == "$(server_ok)" ]; then
+  echo "Shutting down Emacs server."
+  emacsclient -e '(kill-emacs)'
+fi
