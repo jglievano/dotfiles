@@ -41,10 +41,8 @@ fi
 add_path /usr/local/bin
 add_path /usr/local/go/bin
 add_path $HOME/.emacs.d/bin
-add_path $HOME/.rbenv/plugins/ruby-build/bin
 add_path $HOME/anaconda2/bin
 add_path $HOME/.homebrew/opt/go/libexec/bin
-remove_path $HOME/.rbenv/bin
 remove_path $HOME/bin
 remove_path $HOME/.homebrew/bin
 
@@ -84,6 +82,5 @@ if [ -e "$HOME/.bashrc.local" ]; then
 fi
 
 # Give preference to local installs.
-add_path $HOME/.rbenv/bin
 add_path $HOME/.homebrew/bin
 add_path $HOME/bin
