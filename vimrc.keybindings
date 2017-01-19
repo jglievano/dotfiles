@@ -5,10 +5,11 @@ map q: :q
 
 " Vim.
 nnoremap <leader>vw :w<CR>
+nnoremap <leader>vs :w<CR>
 nnoremap <leader>vW :wq!<CR>
 nnoremap <leader>vq :q!<CR>
 nnoremap <leader>ve :vsplit $MYVIMRC<CR>
-nnoremap <leader>vs :source $MYVIMRC<CR>
+nnoremap <leader>vc :source $MYVIMRC<CR>
 
 " Git.
 nnoremap <leader>ge :Gedit<CR>

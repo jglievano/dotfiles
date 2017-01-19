@@ -57,6 +57,8 @@ set wildignore=log/**,node_module/**,target/**,tmp/**,*.rdc
 set wildmenu
 set wildmode=list:longest,full
 
+colorscheme vividchalk
+
 highlight ColorColumn ctermbg=darkgray
 
 source ~/.vimrc.keybindings
