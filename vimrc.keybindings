@@ -11,7 +11,6 @@ nnoremap <leader>ve :vsplit $MYVIMRC<CR>
 nnoremap <leader>vs :source $MYVIMRC<CR>
 
 " Git.
-nnoremap <leader>ga :! git add %<CR>
 nnoremap <leader>ge :Gedit<CR>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gs :Gstatus<CR>
@@ -19,7 +18,7 @@ nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gf :Ggrep<CR>
 nnoremap <leader>gl :Glog<CR>
-nnoremap <leader>gp :Git push<CR>
+nnoremap <leader>gp :! git push<CR>
 nnoremap <leader>gg :GitGutterToggle<CR>
 
 " Projects.
