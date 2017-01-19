@@ -10,6 +10,19 @@ nnoremap <leader>vq :q!<CR>
 nnoremap <leader>ve :vsplit $MYVIMRC<CR>
 nnoremap <leader>vs :source $MYVIMRC<CR>
 
+" Git.
+nnoremap <leader>ge :Gedit<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gf :Ggrep<CR>
+nnoremap <leader>gl :Glog<CR>
+nnoremap <leader>gg :GitGutterToggle<CR>
+
+" Projects.
+nnoremap <leader>pb :NERDTreeToggle<CR>
+
 " Windows.
 nnoremap <leader>ws <C-w>s
 nnoremap <leader>wv <C-w>v
@@ -24,6 +37,5 @@ nnoremap <leader>b :CtrlPBufer<CR>
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>T :CtrlPClearCache<Cr>:CtrlP<CR>
 nnoremap <leader>] :TagbarToggle<CR>
-nnoremap <leader>g :GitGutterToggle<CR>
 nnoremap <C-g> viwUe
 inoremap <C-g> <esc>viwuea
