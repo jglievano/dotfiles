@@ -16,4 +16,5 @@ Plug 'Shougo/neocomplete'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/Align'
+Plug 'vim-syntastic/syntastic'
 call plug#end()

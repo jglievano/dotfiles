@@ -1,0 +1,29 @@
+let mapleader = "\<space>"
+
+" I don't use `q:`. If I typed it is because I meant `q:`.
+map q: :q
+
+" Vim.
+nnoremap <leader>vw :w<CR>
+nnoremap <leader>vW :wq!<CR>
+nnoremap <leader>vq :q!<CR>
+nnoremap <leader>ve :vsplit $MYVIMRC<CR>
+nnoremap <leader>vs :source $MYVIMRC<CR>
+
+" Windows.
+nnoremap <leader>ws <C-w>s
+nnoremap <leader>wv <C-w>v
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
+
+noremap <leader>l :Align
+nnoremap <leader>a :Ag<space>
+nnoremap <leader>b :CtrlPBufer<CR>
+nnoremap <leader>t :CtrlP<CR>
+nnoremap <leader>T :CtrlPClearCache<Cr>:CtrlP<CR>
+nnoremap <leader>] :TagbarToggle<CR>
+nnoremap <leader>g :GitGutterToggle<CR>
+nnoremap <C-g> viwUe
+inoremap <C-g> <esc>viwuea

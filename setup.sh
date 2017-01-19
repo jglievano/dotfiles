@@ -35,6 +35,7 @@ link bin/stopem ~/bin/stopem
 
 step "Vim"
 link vimrc ~/.vimrc
+link vimrc.keybindings ~/.vimrc.keybindings
 link vimrc.bundles ~/.vimrc.bundles
 
 step "VimPlug"

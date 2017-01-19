@@ -41,12 +41,12 @@ fi
 add_path /usr/local/bin
 add_path /usr/local/go/bin
 add_path $HOME/.emacs.d/bin
-add_path $HOME/.rbenv/bin
 add_path $HOME/.rbenv/plugins/ruby-build/bin
 add_path $HOME/anaconda2/bin
-add_path $HOME/.homebrew/bin
 add_path $HOME/.homebrew/opt/go/libexec/bin
+remove_path $HOME/.rbenv/bin
 remove_path $HOME/bin
+remove_path $HOME/.homebrew/bin
 
 # If kaleidoscope in installed then set as diff tool for P4.
 type -P ksdiff &>/dev/null && export P4DIFF=/usr/local/bin/ksdiff
@@ -69,6 +69,8 @@ export GOPATH=$HOME/go
 add_path $GOPATH/bin
 alias god="cd $GOPATH"
 
+[ -f ${HOME}/.homebrew/etc/bash_completion ] && . ${HOME}/.homebrew/etc/bash_completion
+
 # Aliases.
 alias l="ls -lA"
 alias gs="git status -s -b"
@@ -81,5 +83,7 @@ if [ -e "$HOME/.bashrc.local" ]; then
   source "$HOME/.bashrc.local"
 fi
 
-# Make sure $HOME/bin is on the top of $PATH.
+# Give preference to local installs.
+add_path $HOME/.rbenv/bin
+add_path $HOME/.homebrew/bin
 add_path $HOME/bin
