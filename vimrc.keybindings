@@ -1,8 +1,8 @@
 let mapleader = "\<space>"
 
 " Typing.
-nnoremap <leader>ic i✓<ESC>
-nnoremap <leader>ix i✘<ESC>
+nnoremap <leader>ic a✓<ESC>
+nnoremap <leader>ix a✘<ESC>
 
 " Vim.
 nnoremap <leader>vw :w<CR>
