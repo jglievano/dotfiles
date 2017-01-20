@@ -1,3 +1,13 @@
+function! BuildYCM(info)
+  " info is a dictionary with 3 fields.
+  " - name:   name of plugin.
+  " - status: 'installed', 'updated', or 'unchanged'.
+  " - force:  set on PlugInstall! or PlugUpdate!
+  if a:info.status == 'installed' || a:info.force
+    !./install.py
+  endif
+endfunction
+
 call plug#begin('~/.vim/plugged')
 Plug 'ajh17/VimCompletesMe'
 Plug 'airblade/vim-gitgutter'
@@ -5,15 +15,16 @@ Plug 'austintaylor/vim-indentobject'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'fatih/vim-go'
+Plug 'kien/ctrlp.vim'
 Plug 'kchmck/vim-coffee-script'
-Plug 'jazzcore/ctrlp-cmatcher'
 Plug 'kien/ctrlp.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'pangloss/vim-javascript'
 Plug 'rking/ag.vim'
-Plug 'vim-syntastic/syntastic'
-Plug 'Shougo/neocomplete'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'tpope/vim-fugitive'
+Plug 'valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/Align'
+Plug 'vim-syntastic/syntastic'
 call plug#end()

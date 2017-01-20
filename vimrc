@@ -57,33 +57,11 @@ set wildignore=log/**,node_module/**,target/**,tmp/**,*.rdc
 set wildmenu
 set wildmode=list:longest,full
 
+colorscheme vividchalk
+
 highlight ColorColumn ctermbg=darkgray
 
-" Keyboard shortcuts
-let mapleader = ','
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-noremap <leader>l :Align
-nnoremap <leader>a :Ag<space>
-nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>d :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
-nnoremap <leader>t :CtrlP<CR>
-nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
-nnoremap <leader>] :TagbarToggle<CR>
-nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
-nnoremap <leader>g :GitGutterToggle<CR>
-nnoremap <leader>c <Plug>Kwbd
-nnoremap <C-g> viwUe
-inoremap <C-g> <esc>viwUea
-nnoremap - ddp
-nnoremap _ ddkP
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
-cnoremap w!! %!sudo tee > /dev/null %
+source ~/.vimrc.keybindings
 
 let g:gitgutter_enabled = 0
 

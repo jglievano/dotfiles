@@ -47,21 +47,16 @@ fi
 add_path /usr/local/bin
 add_path /usr/local/go/bin
 add_path $HOME/.emacs.d/bin
-add_path $HOME/.rbenv/bin
-add_path $HOME/.rbenv/plugins/ruby-build/bin
 add_path $HOME/anaconda2/bin
 if [[ "$OSTYPE" == "darwin"* ]]; then
   add_path ${HOMEBREWPATH}/bin
-  add_path ${HOMEBREWPATH}/opt/go/libexec/bin
 fi
 remove_path $HOME/bin
+remove_path $HOME/.homebrew/bin
 
 # If kaleidoscope in installed then set as diff tool for P4.
 type -P ksdiff &>/dev/null && export P4DIFF=/usr/local/bin/ksdiff
 type -P ksdiff &>/dev/null && export P4MERGE=/usr/local/bin/ksdiff
-
-# If rbenv is installed the initialize.
-if which rbenv > /dev/null; then eval "$(rbenv init - sh)"; fi
 
 # Set alias for Vim if MacVim is installed.
 if [ -f "/Applications/MacVim.app/Contents/MacOS/Vim" ]; then
@@ -92,5 +87,9 @@ if [ -e "$HOME/.bashrc.local" ]; then
   source "$HOME/.bashrc.local"
 fi
 
-# Make sure $HOME/bin is on the top of $PATH.
+# Give preference to local installs.
+add_path $HOME/.homebrew/bin
 add_path $HOME/bin
+
+# If rbenv is installed the initialize.
+if which rbenv > /dev/null; then eval "$(rbenv init - sh)"; fi

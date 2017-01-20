@@ -35,7 +35,9 @@ link bin/stopem ~/bin/stopem
 
 step "Vim"
 link vimrc ~/.vimrc
+link vimrc.keybindings ~/.vimrc.keybindings
 link vimrc.bundles ~/.vimrc.bundles
+link vim_colors ~/.vim/colors
 
 step "VimPlug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

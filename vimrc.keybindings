@@ -1,0 +1,43 @@
+let mapleader = "\<space>"
+
+" I don't use `q:`. If I typed it is because I meant `q:`.
+map q: :q
+
+" Vim.
+nnoremap <leader>vw :w<CR>
+nnoremap <leader>vs :w<CR>
+nnoremap <leader>vW :wq!<CR>
+nnoremap <leader>vq :q!<CR>
+nnoremap <leader>ve :vsplit $MYVIMRC<CR>
+nnoremap <leader>vc :source $MYVIMRC<CR>
+
+" Git.
+nnoremap <leader>ge :Gedit<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gf :Ggrep<CR>
+nnoremap <leader>gl :Glog<CR>
+nnoremap <leader>gp :! git push<CR>
+nnoremap <leader>gg :GitGutterToggle<CR>
+
+" Projects.
+nnoremap <leader>pb :NERDTreeToggle<CR>
+
+" Windows.
+nnoremap <leader>ws <C-w>s
+nnoremap <leader>wv <C-w>v
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
+
+noremap <leader>l :Align
+nnoremap <leader>a :Ag<space>
+nnoremap <leader>b :CtrlPBufer<CR>
+nnoremap <leader>t :CtrlP<CR>
+nnoremap <leader>T :CtrlPClearCache<Cr>:CtrlP<CR>
+nnoremap <leader>] :TagbarToggle<CR>
+nnoremap <C-g> viwUe
+inoremap <C-g> <esc>viwuea
