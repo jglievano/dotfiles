@@ -1,7 +1,8 @@
 let mapleader = "\<space>"
 
-" I don't use `q:`. If I typed it is because I meant `q:`.
-map q: :q
+" Typing.
+nnoremap <leader>ic i✓<ESC>
+nnoremap <leader>ix i✘<ESC>
 
 " Vim.
 nnoremap <leader>vw :w<CR>
@@ -40,4 +41,4 @@ nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>T :CtrlPClearCache<Cr>:CtrlP<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <C-g> viwUe
-inoremap <C-g> <esc>viwuea
+inoremap <C-g> <ESC>viwUea
