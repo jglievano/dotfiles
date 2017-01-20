@@ -8,8 +8,14 @@ yellow="\[\033[33m\]"
 
 user=$(whoami)
 hostname=$(hostname)
+HOMEBREWPATH=
 if [[ "$OSTYPE" == "darwin"* ]]; then
   hostname=$(scutil --get ComputerName)
+  if [ -d ${HOME}/.homebrew ]; then
+    HOMEBREWPATH=${HOME}/.homebrew
+  else
+    HOMEBREWPATH=/usr/local
+  fi
 fi
 export PS1="${yellow}${user}${reset}@${blue}${hostname}${reset}:${red}\w >${reset} "
 
@@ -44,8 +50,10 @@ add_path $HOME/.emacs.d/bin
 add_path $HOME/.rbenv/bin
 add_path $HOME/.rbenv/plugins/ruby-build/bin
 add_path $HOME/anaconda2/bin
-add_path $HOME/.homebrew/bin
-add_path $HOME/.homebrew/opt/go/libexec/bin
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  add_path ${HOMEBREWPATH}/bin
+  add_path ${HOMEBREWPATH}/opt/go/libexec/bin
+fi
 remove_path $HOME/bin
 
 # If kaleidoscope in installed then set as diff tool for P4.
@@ -68,6 +76,9 @@ export EDITOR=vim
 export GOPATH=$HOME/go
 add_path $GOPATH/bin
 alias god="cd $GOPATH"
+
+# Bash-completion.
+[ -f ${HOMEBREWPATH}/etc/bash_completion ] && . ${HOMEBREWPATH}/etc/bash_completion
 
 # Aliases.
 alias l="ls -lA"
