@@ -1,1 +1,3 @@
-# dotfiles
+# . FILES
+
+by `Juan G. Lievano`.
