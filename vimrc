@@ -57,6 +57,7 @@ set wildignore=log/**,node_module/**,target/**,tmp/**,*.rdc
 set wildmenu
 set wildmode=list:longest,full
 
+set background=dark
 colorscheme vividchalk
 
 highlight ColorColumn ctermbg=darkgray
