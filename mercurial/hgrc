@@ -1,0 +1,115 @@
+[ui]
+username = Gabe Lievano <gabe@jglievano.me>
+editor = "vim"
+commitsubrepos = False
+ignore = ~/.hgignore
+usehttp2 = True
+mergemarkers = detailed
+
+[extensions]
+share =
+gpg =
+hgext.bookmarks =
+hgext.color =
+hgext.convert =
+hgext.extdiff =
+hgext.fetch =
+hgext.highlight =
+hgext.histedit =
+hgext.mq =
+hgext.pager =
+hgext.parentrevspec =
+hgext.patchbomb =
+hgext.progress =
+hgext.purge =
+hgext.rebase =
+hgext.record =
+hgext.schemes =
+hgext.shelve =
+hgext.transplant =
+
+[merge-tools]
+vimdiff.disabled = yes
+gvimdiff.disabled = yes
+
+[diff]
+git = 1
+showfunc = 1
+
+[bookmarks]
+track.current = 1
+
+[histedit]
+defaultrev = only(.) and canmutate
+
+[web]
+port = 7000
+allow_archive = bz2 zip
+
+[extdiff]
+cmd.vd = "vim"
+
+[pager]
+pager = less -FRX
+attend = log,ll,xl,lc,l,diffexported,incoming,outgoing,paths,export,diff,grep,help,annotate,blame,manifest,files,locate,cat,heads,branches,tags,resolve
+
+[colors]
+status.modified = cyan
+pstatus.added = green
+status.removed = red
+status.deleted = yellow bold underline
+status.unknown = magenta bold underline
+status.ignored = black bold
+diff.diffline = none
+diff.extended = cyan
+diff.file_a = red
+diff.file_b = green
+diff.hunk = yellow bold
+diff.deleted = red
+diff.inserted = green
+diff.changed = white
+diff.trailingwhitespace = white_background
+tags.normal = magenta bold
+
+[bookmarks]
+track.current = True
+
+[phases]
+public = False
+
+[revsetalias]
+canmutate = not (public() or upstream())
+smart = ((parents(canmutate) or canmutate or (head() - closed())) and (not obsolete() or unstable()^)) or .
+
+[defaults]
+rebase = --keepbranches
+addremove = --similarity 100
+annotate = -nu
+serve = -v
+
+[alias]
+submit = !$HG update default && $HG branch $1 && $HG add && $HG commit -m '$2' && $HG push --new-branch && $HG update default
+resubmit = !$HG update $1 && $HG add && $HG commit -m '$2' && $HG push --branch . && $HG update default
+d = diff -p --color=auto
+dl = !"$HG" diff -p --color=never %@ | vim -R -c 'set ft=diff' -
+ll = log --graph --style compact --limit 6 -r 'sort((::. or bookmark()), "-rev")'
+sl = log -Gr smart -Tsl
+si = incoming -GTsl
+sl. = log -Gr 'smart and ::.' -Tsl
+egrep = !$HG locate -0 '$2' $3 $4 $5 $6 $7 $8 $9 | (cd $(hg root) ; xargs -0 egrep -H '$1')
+crecord = !$HG commit --interactive --config ui.interface=curses $@
+havepatch = log -r 'grep("$1")'
+
+[templatealias]
+sl_branch = '{ifeq(branch, "default", "", "{label(black_background, branch)} ")}'
+sl_node = '{label("log.changeset changeset.{phase}", shortest(node))}{if(ellipsis, "...")}'
+sl_user = '{label("grep.user", author|user)}'
+sl_tags = '{label("tags.normal", if(tags, " {tags}"))}'
+sl_book = '{label("sl.book", if(bookmarks, " {bookmarks}"))}'
+sl_topic = '{label("sl.topic", if(topics, " {topics}"))}'
+sl_desc = '{label(ifcontains(rev, revset('.'), 'desc.here'), desc|firstline)}'
+
+[templates]
+sl = '{sl_branch}{sl_node} {sl_user}{sl_tags}{sl_book}{sl_topic}\n{sl_desc}'
+
+%include ~/.hgrc.local

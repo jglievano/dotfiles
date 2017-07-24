@@ -1,0 +1,17 @@
+syntax: glob
+
+.DS_Store
+.git/
+
+### Xcode
+
+DerivedData
+*.swp
+*~/.nib
+build
+*.model *.mode1v3 *.mode2 *.mode2v3 *.pbxuser
+*.perspective
+*.perspectivev3
+xcuserdata
+timeline.xctimeline
+playground.xcworkspace

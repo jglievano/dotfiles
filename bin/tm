@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 SESSION=$(hostname -s)
 if [ -n "$1" ]; then

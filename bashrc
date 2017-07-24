@@ -1,12 +1,18 @@
 # vim: set ft=sh:
 
 # UI colors.
-reset="\[\033[0m\]"
-blue="\[\033[34m\]"
-red="\[\033[31m\]"
-yellow="\[\033[33m\]"
+TERM=screen-256color
 
-user=$(whoami)
+D=$'\[\e[m\]'
+RED=$'\[\e[;31m\]'
+YELLOW=$'\[\e[;33m\]'
+LYELLOW=$'\[\e[;93m\]'
+BLUE=$'\[\e[;34m\]'
+CYAN=$'\[\e[;36m\]'
+LCYAN=$'\[\e[;96m\]'
+GREEN=$'\[\e[;32m\]'
+GRAY=$'\[\e[;37m\]'
+
 hostname=$(hostname)
 HOMEBREWPATH=
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -17,7 +23,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     HOMEBREWPATH=/usr/local
   fi
 fi
-export PS1="${yellow}${user}${reset}@${blue}${hostname}${reset}:${red}\w >${reset} "
+
+export PS1="\n${GRAY}○ \d \t ${YELLOW}@ \h\n${RED}\w${BLUE} ○ ${D}"
 
 function add_path {
   # Check to see if the arg is in PATH.
@@ -33,24 +40,10 @@ function remove_path {
   export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`;
 }
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  export JGLDEV=$HOME/Developer
-#elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-#elif [[ "$OSTYPE" == "cygwin" ]]; then
-#elif [[ "$OSTYPE" == "msys" ]]; then
-#elif [[ "$OSTYPE" == "win32" ]]; then
-#elif [[ "$OSTYPE" == "freebsd"* ]]; then
-else
-  export JGLDEV=$HOME/dev
-fi
-
-add_path /usr/local/bin
-add_path /usr/local/go/bin
-add_path $HOME/.emacs.d/bin
-add_path $HOME/anaconda2/bin
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  add_path ${HOMEBREWPATH}/bin
-fi
+add_path    /usr/local/bin
+add_path    /usr/local/go/bin
+add_path    $HOME/.local/bin
+add_path    $HOME/anaconda2/bin
 remove_path $HOME/bin
 remove_path $HOME/.homebrew/bin
 
@@ -58,17 +51,20 @@ remove_path $HOME/.homebrew/bin
 type -P ksdiff &>/dev/null && export P4DIFF=/usr/local/bin/ksdiff
 type -P ksdiff &>/dev/null && export P4MERGE=/usr/local/bin/ksdiff
 
-# Set alias for Vim if MacVim is installed.
-if [ -f "/Applications/MacVim.app/Contents/MacOS/Vim" ]; then
-  alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
-fi
-
+alias  v=vim
+alias  m="emacsclient -t"
 export ALTERNATE_EDITOR=""
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL="vim"
+export EDITOR="vim"
+
+# Android.
+export ANDROID_HOME=${HOME}/android-sdk
+add_path ${ANDROID_HOME?}/tools
+add_path ${ANDROID_HOME?}/tools/bin
+add_path ${ANDROID_HOME?}/platform-tools
 
 # Go-lang.
-export GOPATH=$HOME/go
+export GOPATH=$HOME/gowork
 add_path $GOPATH/bin
 alias god="cd $GOPATH"
 
@@ -88,8 +84,18 @@ if [ -e "$HOME/.bashrc.local" ]; then
 fi
 
 # Give preference to local installs.
-add_path $HOME/.homebrew/bin
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  add_path ${HOMEBREWPATH}/bin
+fi
 add_path $HOME/bin
 
 # If rbenv is installed the initialize.
 if which rbenv > /dev/null; then eval "$(rbenv init - sh)"; fi
+
+# added by Anaconda2 4.3.1 installer
+export PATH="/anaconda/bin:$PATH"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+add_path $HOME/.cargo/bin
+add_path /usr/local/php5/bin

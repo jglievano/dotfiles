@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-if [ -z "$INSIDE_EMACS" ]; then
-    CMD="exec emacsclient -a \"\" -t"
-else
-    CMD="exec emacsclient"
-fi
-
-$CMD "$@"
