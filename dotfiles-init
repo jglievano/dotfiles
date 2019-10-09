@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+
+set -u
+
+BREW_PATH=${HOME}/.homebrew
+BREW_URL=https://github.com/Homebrew/brew/tarball/master
+
+RUST_URL=https://sh.rustup.rs
+
+usage() {
+    cat 1>&2 <<EOF
+dotfiles-init 0.0.1 (2019-10-09)
+Dotfiles installer.
+
+USAGE:
+    dotfiles-init [FLAGS] [OPTIONS]
+
+FLAGS:
+    -v, --verbose           Enable verbose output
+    -y                      Disable confirmation prompt
+        --no-modify-path    Don't configure the PATH environment variable
+    -h, --help              Prints help information
+    -V, --version           Prints version information
+
+OPTIONS:
+    --no-options            Default, no options available now.
+EOF
+}
+
+main() {
+  install_homebrew
+}
+
+say() {
+  printf 'dotfiles: %s\n' "$1"
+}
+
+err() {
+  say "$1" >&2
+  exit 1
+}
+
+need_cmd() {
+  if ! check_cmd "$1"; then
+    err "need '$1' (command not found)"
+  fi
+}
+
+check_cmd() {
+  command -v "$1" > /dev/null 2>&1
+}
+
+assert_nz() {
+  if [ -z "$1" ]; then
+    err "assert_nz $2"
+  fi
+}
+
+ensure() {
+  if ! "$@"; then err "command failed: $*";fi
+}
+
+ignore() {
+  "$@"
+}
+
+install_homebrew() {
+  mkdir ${BREW_PATH} && curl -L ${BREW_URL} | tar xz --strip 1 -C ${BREW_PATH}
+}
+
+install_rust() {
+  curl ${RUST_URL} | sh
+}
+
+main "$@" | exit 1
