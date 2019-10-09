@@ -41,6 +41,7 @@ platform.
 - Hack Nerd Font
 - Docker
 - GPG
+- diff-so-fancy
 
 ## macOS specific installations:
 
