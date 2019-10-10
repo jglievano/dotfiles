@@ -12,6 +12,7 @@
   autocrlf = input
   untrackedCache = true
   pager = diff-so-fancy | less --tabs=4 -RFX
+  excludesfile = ~/.gitignore
 
 [credential]
   helper = osxkeychain
@@ -78,7 +79,10 @@
 
 
 [color]
-  ui = auto
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
 
 [color "branch"]
   current = yellow reverse
@@ -101,3 +105,6 @@
   oldHighlight = red bold 52
   newNormal = green bold
   newHighlight = green bold 22
+
+[include]
+  path = ~/.local.git

@@ -28,7 +28,24 @@ EOF
 }
 
 main() {
+  need_cmd curl
+
+  for arg in "$@"; do
+    case "$arg" in
+      -h|--help)
+        usage
+        exit 0
+        ;;
+      -y)
+        need_tty=no
+        ;;
+      *)
+        ;;
+    esac
+  done
+
   install_homebrew
+  install_rust
 }
 
 say() {
