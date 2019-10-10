@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+SESSION=$(hostname -s)
+if [ -n "$1" ]; then
+  SESSION=$1
+fi
+
+say "created session \"${SESSION}\""
+tmux -S /tmp/tmux_shared new -A -s ${SESSION} -n ws
