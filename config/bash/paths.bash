@@ -1,0 +1,13 @@
+add_path /usr/local/bin
+add_path /usr/local/go/bin
+add_path /usr/local/php5/bin
+add_path ${ANDROID_HOME:?}/platform-tools
+add_path ${ANDROID_HOME:?}/tools
+add_path ${ANDROID_HOME:?}/tools/bin
+add_path ${GOPATH:?}/bin
+add_path ${HOME}/bin
+add_path ${HOME}/.cargo/bin
+add_path ${HOME}/.homebrew/bin
+add_path ${HOME}/.npm-global/bin
+add_path ${HOME}/.rbenv/bin
+add_path ${HOME}/.rbenv/plugins/ruby-build/bin
