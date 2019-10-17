@@ -56,9 +56,9 @@ prompt_string () {
     color_prompt=
   fi
   if [ "$color_prompt" = yes ]; then
-    printf "\[\033[03;35m\]\u@\h\[\033[00m\] \[\033[01;34m\]$(branch_prompt $root_abbrev)/${path}\[\033[00m\]\n❯ "
+    printf "\[\033[03;35m\]@\h\[\033[00m\] \[\033[01;34m\]$(branch_prompt $root_abbrev)/${path}\[\033[00m\]\n❯ "
   else
-    printf "\n\u@\h $(branch_prompt $root_abbrev)/${path}\n❯ "
+    printf "\n@\h $(branch_prompt $root_abbrev)/${path}\n❯ "
   fi
   unset color_prompt
 }
