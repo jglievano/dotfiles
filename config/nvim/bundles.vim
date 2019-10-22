@@ -3,7 +3,6 @@ call plug#begin()
 Plug 'airblade/vim-rooter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'gko/upside-down'
 Plug 'gko/vim-g'
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
