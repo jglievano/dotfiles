@@ -153,7 +153,7 @@ Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'heavenshell/vim-jsdoc', { 'for': ['javascript', 'typescript'] }
 Plug 'hokaccha/vim-html5validator', { 'for': 'html' }
 Plug 'jkramer/vim-checkbox', { 'for': 'markdown' }
-Plug 'jparise/vim-graphql'
+Plug 'jparise/vim-graphql', { 'for': 'graphql' }
 Plug 'justmao945/vim-clang', { 'for': ['c', 'cpp'] }
 Plug 'klen/python-mode', { 'for': 'python' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
@@ -162,15 +162,17 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'quramy/tsuquyomi', { 'for': 'typescript' }
-Plug 'racer-rust/vim-racer', { 'for': 'rust' }
-Plug 'rhysd/vim-wasm', { 'for': ['wast', 'wat'] }
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'stanangeloff/php.vim', { 'for': 'php' }
-Plug 'tpope/vim-haml', { 'for': 'haml' }
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'quramy/tsuquyomi',        { 'for': 'typescript' }
+Plug 'tpope/vim-haml',          { 'for': 'haml' }
+Plug 'udalov/kotlin-vim',       { 'for': 'kotlin' }
+Plug 'stanangeloff/php.vim',    { 'for': 'php' }
+Plug 'tpope/vim-rails',         { 'for': 'ruby' }
+Plug 'vim-ruby/vim-ruby',       { 'for': 'ruby' }
+Plug 'racer-rust/vim-racer',    { 'for': 'rust' }
+Plug 'rust-lang/rust.vim',      { 'for': 'rust' }
+Plug 'keith/swift.vim',         { 'for': 'swift' }
+Plug 'cespare/vim-toml',        { 'for': 'toml' }
+Plug 'rhysd/vim-wasm',          { 'for': ['wast', 'wat'] }
 
 " _
 " Colorschemes

@@ -75,3 +75,14 @@ augroup trailing
   au InsertEnter * :set listchars-=trail:⌴
   au InsertLeave * :set listchars+=trail:⌴
 augroup END
+
+augroup extension_formats
+  autocmd!
+  autocmd BufRead,BufNewFile *.borg  set filetype=gcl
+  autocmd BufRead,BufNewFile *.fish  set filetype=fish
+  autocmd BufRead,BufNewFile *.m     set filetype=objc
+  autocmd BufRead,BufNewFile *.md    set filetype=markdown
+  autocmd BufRead,BufNewFile *.swift set filetype=swift
+  autocmd BufRead,BufNewFile BUCK    set filetype=python
+  autocmd BufRead,BufNewFile BUILD   set filetype=python
+augroup END
