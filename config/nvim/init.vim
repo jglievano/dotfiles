@@ -1,6 +1,13 @@
 set encoding=utf-8
 scriptencoding utf-8
 
+function! s:SourceVimFile(vimfile)
+  let path_name = expand(s:VimPath(a:vimfile))
+  if filereadable(path_name)
+    execute 'source ' . fnameescape(path_name)
+  endif
+endfunction
+
 function! s:VimPath(filename)
   if has('nvim')
     return '~/.config/nvim/' . a:filename
@@ -13,10 +20,7 @@ if &shell =~# 'fish$'
   set shell=sh
 endif
 
-let bundles_path = expand(s:VimPath('bundles.vim'))
-if filereadable(bundles_path)
-  source bundles_path
-endif
+exec s:SourceVimFile('bundles.vim')
 
 filetype plugin indent on
 
@@ -28,9 +32,9 @@ set autoread
 set noautowrite
 set backspace=indent,eol,start
 set backupcopy=yes
-set backupdir=s:VimPath('/backup//')
+set backupdir=~/.local/share/nvim/site/backup//
 set colorcolumn=80,100
 set completeopt=menu
 set nocursorline
-set directory=s:VimPath('/swap//')
+set directory=~/.local/share/nvim/site/swap//
 

@@ -105,7 +105,7 @@ Plug 'tpope/vim-surround'
 Plug 'tyru/open-browser.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/TaskList.vim', { 'on': 'TaskList' }
-Plus 'wsdjeg/vim-fetch'
+Plug 'wsdjeg/vim-fetch'
 Plug 'w0rp/ale', {
       \ 'for': [
       \ 'javascript',
