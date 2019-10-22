@@ -25,6 +25,7 @@ exec s:SourceVimFile('bundles.vim')
 filetype plugin indent on
 
 syntax on
+set background=light
 "colorscheme X
 
 set autoindent
@@ -32,9 +33,9 @@ set autoread
 set noautowrite
 set backspace=indent,eol,start
 set backupcopy=yes
-set backupdir=~/.local/share/nvim/site/backup//
+set backupdir=~/.local/share/nvim/backup//
 set colorcolumn=80,100
 set completeopt=menu
 set nocursorline
-set directory=~/.local/share/nvim/site/swap//
+set directory=~/.local/share/nvim/swap//
 
