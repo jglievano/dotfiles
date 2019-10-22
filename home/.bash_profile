@@ -4,18 +4,7 @@
 
 # Resolve BASH_CONFIG_DIR.
 
-READLINK=$(which greadlink 2>/dev/null || which readlink)
-CURRENT_SCRIPT=$BASH_SOURCE
-
-if [[ -n $CURRENT_SCRIPT && -x "$READLINK" ]]; then
-  SCRIPT_PATH=$($READLINK -f "$CURRENT_SCRIPT")
-  BASH_CONFIG_DIR="$(dirname "$(dirname "$SCRIPT_PATH")")/config/bash"
-elif [ -d "$HOME/.config/bash" ]; then
-  BASH_CONFIG_DIR="$HOME/.config/bash"
-else
-  printf "Unable to find bash config files, exiting."
-  return
-fi
+BASH_CONFIG_DIR="$HOME/.config/bash"
 
 # Source bash config files.
 
@@ -34,7 +23,7 @@ fi
 
 # Clean up.
 
-unset READLINK CURRENT_SCRIPT SCRIPT_PATH BASH_CONFIG_FILE LOCAL_FILE
+unset BASH_CONFIG_FILE CONFIG_FILE LOCAL_FILE
 
 # Export
 

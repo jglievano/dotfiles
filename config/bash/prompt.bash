@@ -22,9 +22,8 @@ branch_prompt () {
           #branch=$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/') \
           git_dir=$(git rev-parse --git-dir 2>/dev/null)
   if [[ -n $git_dir ]]; then
-    printf "\xE2\x9C\xAA "
+    printf " \xE2\x9C\xAA "
   fi
-  printf "$root_name"
 }
 
 prompt_string () {
@@ -56,9 +55,15 @@ prompt_string () {
     color_prompt=
   fi
   if [ "$color_prompt" = yes ]; then
-    printf "\[\033[03;35m\]@\h\[\033[00m\] \[\033[01;34m\]$(branch_prompt $root_abbrev)/${path}\[\033[00m\]\n❯ "
+    printf "\[\033[03;33m\]\u\[\033[00m\]"
+    printf " [at] "
+    printf "\[\033[03;35m\]\h\[\033[00m\]"
+    printf ":"
+    printf "\[\033[01;34m\]${root_abbrev}/${path}\[\033[00m\]"
+    printf "$(branch_prompt $root_abbrev)"
+    printf "\n❯ "
   else
-    printf "\n@\h $(branch_prompt $root_abbrev)/${path}\n❯ "
+    printf "\u@\h $(branch_prompt $root_abbrev)/${path}\n❯ "
   fi
   unset color_prompt
 }
