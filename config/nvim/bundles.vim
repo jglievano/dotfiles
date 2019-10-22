@@ -21,24 +21,6 @@ Plug 'janko-m/vim-test', {
       \ 'TestLast',
       \ 'TestVisit'
       \ ] }
-Plug 'junegunn/fzf.vim', {
-      \ 'dir': '~/.fzf',
-      \ 'do': './install --all',
-      \ 'on': [
-      \ 'Ag',
-      \ 'Rg',
-      \ 'FZF',
-      \ 'Files',
-      \ 'Buffers',
-      \ 'Commits',
-      \ 'BCommits',
-      \ 'Tags',
-      \ 'BTags',
-      \ 'History',
-      \ 'Lines',
-      \ 'BLines',
-      \ 'Marks'
-      \ ] }
 Plug 'junegunn/vim-github-dashboard', {
       \ 'on': [
       \ 'GHdashboard',
@@ -124,7 +106,8 @@ Plug 'xolox/vim-easytags', {
       \ ] }
 
 if has('mac')
-  Plug '/usr/local/opt/fzf'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
 endif
 
 if executable('go')
@@ -200,11 +183,11 @@ Plug 'cormacrelf/vim-colors-github'
 Plug 'danielwe/base16-vim'
 Plug 'dterei/VimCobaltColourScheme'
 Plug 'fxn/vim-monochrome'
-Plug 'jpo/vim-railscast-theme'
+Plug 'jpo/vim-railscasts-theme'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
-Plug 'nightsense/cosmis_latte'
+Plug 'nightsense/cosmic_latte'
 Plug 'nightsense/snow'
 Plug 'nightsense/stellarized'
 Plug 'reedes/vim-colors-pencil'
@@ -212,7 +195,7 @@ Plug 'rhysd/vim-color-spring-night'
 Plug 'sjl/badwolf'
 Plug 'tpope/vim-vividchalk'
 Plug 'trapd00r/neverland-vim-theme'
-Plug 'trevormiller/nova-vim'
+Plug 'trevordmiller/nova-vim'
 Plug 'twerth/ir_black'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/Wombat'
