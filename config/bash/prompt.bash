@@ -19,10 +19,11 @@ user_hostname () {
 
 branch_prompt () {
   declare root_name="$1" \
-          #branch=$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/') \
+          branch=$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/') \
           git_dir=$(git rev-parse --git-dir 2>/dev/null)
   if [[ -n $git_dir ]]; then
-    printf " ⊕ "
+    # TODO: 41/101 (red) for dirty branch.
+    printf "${root_abbrev}\[\033[102;90m\]⋀${branch}\[\033[0m\]"
   fi
 }
 
@@ -59,8 +60,7 @@ prompt_string () {
     printf " @ "
     printf "\[\033[01;35m\]\h\[\033[00m\]"
     printf " ≡ "
-    printf "\[\033[01;34m\]${root_abbrev}/${path}\[\033[00m\]"
-    printf "$(branch_prompt $root_abbrev)\n"
+    printf "\[\033[01;34m\]$(branch_prompt $root_abbrev)\[\033[01;34m\]/${path}\[\033[00m\]\n"
     printf "\[\033[01;39m\]❯\[\033[00m\] "
   else
     printf "\u@\h $(branch_prompt $root_abbrev)/${path}\n❯ "
