@@ -24,6 +24,8 @@ branch_prompt () {
   if [[ -n $git_dir ]]; then
     # TODO: 41/101 (red) for dirty branch.
     printf "${root_abbrev}\[\033[102;90m\]⋀${branch}\[\033[0m\]"
+  else
+    printf "${root_abbrev}"
   fi
 }
 
