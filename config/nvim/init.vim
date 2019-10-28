@@ -46,6 +46,7 @@ filetype plugin indent on
 syntax on
 set background=light
 "colorscheme X
+let g:airline_theme='base16'
 
 set autoindent
 set autoread
