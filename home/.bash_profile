@@ -28,3 +28,6 @@ unset BASH_CONFIG_FILE CONFIG_FILE LOCAL_FILE
 # Export
 
 export BASH_CONFIG_DIR BASH_LOCAL_CONFIG_DIR
+
+# TODO: move to the correct place.
+check_cmd pyenv && eval "$(pyenv init -)"
