@@ -8,7 +8,7 @@ BASH_CONFIG_DIR="$HOME/.config/bash"
 
 # Source bash config files.
 
-for CONFIG_FILE in "$BASH_CONFIG_DIR"/{functions,env,paths,aliases,prompt}.bash; do
+for CONFIG_FILE in "$BASH_CONFIG_DIR"/{functions,env,paths,packages,aliases,prompt}.bash; do
   [ -f "$CONFIG_FILE" ] && . "$CONFIG_FILE"
 done
 

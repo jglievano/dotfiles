@@ -27,5 +27,3 @@ export ANDROID_HOME=$HOME/android/sdk
 export ANDROID_SDK_ROOT=$HOME/android/sdk
 export ANDROID_AVD_HOME=$HOME/.android/avd
 export GOPATH=$HOME/go
-
-check_cmd pyenv && eval "$(pyenv init -)"

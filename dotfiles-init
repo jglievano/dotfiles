@@ -2,8 +2,14 @@
 
 set -u
 
+# TODO: support other OS'.
+SYSTEM_OS=darwin
+
 BREW_PATH=${HOME}/.homebrew
 BREW_URL=https://github.com/Homebrew/brew/tarball/master
+
+GO_VERSION=1.13.3
+GO_URL=https://dl.google.com/go/go${GO_VERSION}.${SYSTEM_OS}-amd64.tar.gz
 
 RUST_URL=https://sh.rustup.rs
 
@@ -45,7 +51,9 @@ main() {
   done
 
   install_homebrew
+  install_go
   install_rust
+  install_vim
 }
 
 say() {
@@ -85,8 +93,31 @@ install_homebrew() {
   mkdir ${BREW_PATH} && curl -L ${BREW_URL} | tar xz --strip 1 -C ${BREW_PATH}
 }
 
+install_go() {
+  # might be easier using Homebrew/apt-get?
+  curl ${GO_URL}
+  tar -xvf go${GO_VERSION}.${SYSTEM_OS}-amd64.tar.gz
+  sudo mv go /usr/local
+  rm go${GO_VERSION}.${SYSTEM_OS}-amd64.tar.gz
+  mkdir ${HOME}/go
+}
+
 install_rust() {
   curl ${RUST_URL} | sh
+}
+
+install_vim() {
+  pushd nvim
+  stow -t ~/.config/nvim nvim  
+  ln -s ~/.config/nvim ~/.vim
+  ln -s ~/.vim/init.vim ~/.vimrc
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  vim +PlugInstall +qall
+  nvim +PlugInstall +qall
+  popd
 }
 
 main "$@" | exit 1
