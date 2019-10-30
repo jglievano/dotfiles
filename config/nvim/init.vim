@@ -44,9 +44,9 @@ exec s:SourceVimFile('bundles.vim')
 filetype plugin indent on
 
 syntax on
-set background=light
-"colorscheme X
-let g:airline_theme='sol'
+set background=dark
+colorscheme badwolf
+let g:airline_theme='badwolf'
 
 set autoindent
 set autoread
