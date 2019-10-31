@@ -48,21 +48,52 @@ set background=dark
 colorscheme badwolf
 let g:airline_theme='badwolf'
 
+" Tab settings.
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+
+" Better defaults.
 set autoindent
+set backspace=indent,eol,start
+set cursorline
+set hidden
+set laststatus=2
+set list
+set listchars=tab:▸\ ,eol:¬
+set relativenumber
+set ruler
+set scrolloff=3
+set showcmd
+set showmode
+set undofile
+set visualbell
+set wildmenu
+set wildmode=list:longest
+
+" Searching / Moving improvements.
+nnoremap / /\v
+nnoremap <leader><space> :noh<cr>
+nnoremap <tab> %
+vnoremap / /\v
+vnoremap <tab> %
+set gdefault
+set hlsearch
+set ignorecase
+set incsearch
+set showmatch
+set smartcase
+
 set autoread
 set noautowrite
-set backspace=indent,eol,start
 set backupcopy=yes
 set backupdir=~/.local/share/nvim/backup//
 set colorcolumn=80,100
 set completeopt=menu
 set nocursorline
 set directory=~/.local/share/nvim/swap//
-set expandtab
-set shiftwidth=2
 set showtabline=2
-set softtabstop=2
-set tabstop=2
 set undodir=~/.local/share/nvim/undo//
 
 exec s:MakeDir(&backupdir)
