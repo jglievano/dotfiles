@@ -61,16 +61,23 @@ set cursorline
 set hidden
 set laststatus=2
 set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set modelines=0
 set relativenumber
 set ruler
 set scrolloff=3
+set showbreak=↪
 set showcmd
 set showmode
 set undofile
 set visualbell
 set wildmenu
 set wildmode=list:longest
+
+" Spelling.
+set dictionary=/usr/share/dict/words
+"set spellfile=~/.vim/custom-dictionary.utf-8.add,~/.vim-local-dictionary.utf-8.add
+nnoremap zG 2zg
 
 " Searching / Moving improvements.
 nnoremap / /\v

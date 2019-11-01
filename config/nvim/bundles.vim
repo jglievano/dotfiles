@@ -6,25 +6,13 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'gko/vim-g'
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
-Plug 'janko-m/vim-test', {
-      \ 'for': [
-      \ 'javascript',
-      \ 'typescript',
-      \ 'go',
-      \ 'rust',
-      \ 'scala'],
-      \ 'on': [
-      \ 'TestNearest',
-      \ 'TestFile',
-      \ 'TestSuite',
-      \ 'TestLast',
-      \ 'TestVisit'
-      \ ] }
+Plug 'jamessan/vim-gnupg'
 Plug 'junegunn/vim-github-dashboard', {
       \ 'on': [
       \ 'GHdashboard',
       \ 'GHActivity'
       \ ] }
+Plug 'kien/rainbow_parentheses.vim'
 Plug 'kovisoft/paredit', { 'for': ['clojure', 'scheme'] }
 Plug 'kristijanhusak/vim-carbon-now-sh'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
@@ -32,40 +20,12 @@ Plug 'mattesgroeger/vim-bookmarks'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim', { 'on': ['Gist'] }
 Plug 'mattn/webapi-vim'
-Plug 'metakirby5/codi.vim', {
-      \ 'for': [
-      \ 'javascript',
-      \ 'typescript',
-      \ 'c',
-      \ 'cpp',
-      \ 'ruby',
-      \ 'python',
-      \ 'r',
-      \ 'clojure',
-      \ 'php',
-      \ 'haskell',
-      \ 'elm',
-      \ 'elixir'],
-      \ 'on': [
-      \ 'Codi',
-      \ 'Cody!',
-      \ 'Codi!!'
-      \ ] }
 Plug 'mhinz/vim-startify'
 Plug 'pbrisbin/vim-mkdir'
+Plug 'raimondi/delimitmate'
 Plug 'ruanyl/vim-gh-line'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree', {
-      \ 'on': [
-      \ 'NERDTree',
-      \ 'NERDTreeCWD',
-      \ 'NERDTreeClose',
-      \ 'NERDTreeFind',
-      \ 'NERDTreeFocus',
-      \ 'NERDTreeFromBookmark',
-      \ 'NERDTreeMirror',
-      \ 'NERDTreeToggle'
-      \ ] }
+Plug 'scrooloose/nerdtree'
 Plug 'sedm0784/vim-you-autocorrect', {
       \ 'on': [
       \ 'EnableAutocorrect',
@@ -73,15 +33,10 @@ Plug 'sedm0784/vim-you-autocorrect', {
       \ ] }
 Plug 'shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sirver/ultisnips'
-Plug 'tpope/vim-fugitive', {
-      \ 'on': [
-      \ 'Gcommit',
-      \ 'Gstatus',
-      \ 'Gblame',
-      \ 'Gedit',
-      \ 'Gmove',
-      \ 'Gdelete'
-      \ ] }
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tyru/open-browser.vim'
 Plug 'vim-airline/vim-airline'
