@@ -1,6 +1,7 @@
 call plug#begin()
 
 Plug 'airblade/vim-rooter'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'gko/vim-g'

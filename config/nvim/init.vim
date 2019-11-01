@@ -125,3 +125,14 @@ augroup extension_formats
   autocmd BufRead,BufNewFile BUCK    set filetype=python
   autocmd BufRead,BufNewFile BUILD   set filetype=python
 augroup END
+
+" ---
+"  Plugin configuration
+
+" vim-tmux-navigator.
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
