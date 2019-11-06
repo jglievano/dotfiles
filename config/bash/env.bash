@@ -12,6 +12,7 @@ export LANG=en_US
 
 export LESS_TERMCAP_md="${yellow}"
 
+export EDITOR=vim
 export MANPAGER='less -X'
 
 shopt -s nocaseglob
