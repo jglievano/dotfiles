@@ -1,1 +1,5 @@
 config/bash/local
+
+config/nvim/backup
+config/nvim/undo
+config/nvim/swap
