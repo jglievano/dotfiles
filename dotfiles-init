@@ -102,11 +102,21 @@ install_go() {
   mkdir ${HOME}/go
 }
 
+install_ruby() {
+  need_cmd brew
+
+  brew install rbenv ruby-build
+}
+
 install_rust() {
   curl ${RUST_URL} | sh
 }
 
 install_vim() {
+  need_cmd brew
+  need_cmd stow
+
+  brew install vim neovim
   pushd nvim
   stow -t ~/.config/nvim nvim  
   ln -s ~/.config/nvim ~/.vim

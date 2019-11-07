@@ -1,39 +1,12 @@
 call plug#begin()
 
-Plug 'airblade/vim-rooter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'gko/vim-g'
-Plug 'godlygeek/tabular'
-Plug 'honza/vim-snippets'
-Plug 'jamessan/vim-gnupg'
-Plug 'junegunn/vim-github-dashboard', {
-      \ 'on': [
-      \ 'GHdashboard',
-      \ 'GHActivity'
-      \ ] }
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'kovisoft/paredit', { 'for': ['clojure', 'scheme'] }
-Plug 'kristijanhusak/vim-carbon-now-sh'
-Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
-Plug 'mattesgroeger/vim-bookmarks'
-Plug 'mattn/emmet-vim'
-Plug 'mattn/gist-vim', { 'on': ['Gist'] }
-Plug 'mattn/webapi-vim'
 Plug 'mhinz/vim-startify'
-Plug 'pbrisbin/vim-mkdir'
-Plug 'raimondi/delimitmate'
-Plug 'ruanyl/vim-gh-line'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'sedm0784/vim-you-autocorrect', {
-      \ 'on': [
-      \ 'EnableAutocorrect',
-      \ 'DisableAutocorrect'
-      \ ] }
-Plug 'shougo/vimproc.vim', { 'do': 'make' }
-Plug 'sirver/ultisnips'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -41,24 +14,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tyru/open-browser.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-scripts/TaskList.vim', { 'on': 'TaskList' }
-Plug 'wsdjeg/vim-fetch'
-Plug 'w0rp/ale', {
-      \ 'for': [
-      \ 'javascript',
-      \ 'typescript',
-      \ 'css',
-      \ 'scss',
-      \ 'go',
-      \ 'rust',
-      \ 'scala'
-      \ ] }
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags', {
-      \ 'on': [
-      \ 'UpdateTags',
-      \ 'HighlightTags'
-      \ ] }
 
 if has('mac')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -67,28 +22,10 @@ endif
 
 if executable('go')
   Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
-  Plug 'mdempsky/gocode', { 'for': 'go' }
 endif
 
 if executable('npm')
-  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install' }
-  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-  Plug 'prettier/vim-prettier', {
-        \ 'do': 'npm install',
-        \ 'for': [
-        \ 'javascript',
-        \ 'html',
-        \ 'typescript',
-        \ 'css',
-        \ 'less',
-        \ 'scss',
-        \ 'json',
-        \ 'graphql',
-        \ 'markdown',
-        \ 'vue',
-        \ 'yaml'
-        \ ] }
-  let g:UltiSnipsExpandTrigger="<nop>"
+  Plug 'prettier/vim-prettier'
 endif
 
 " _
