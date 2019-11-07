@@ -11,6 +11,9 @@ BREW_URL=https://github.com/Homebrew/brew/tarball/master
 GO_VERSION=1.13.3
 GO_URL=https://dl.google.com/go/go${GO_VERSION}.${SYSTEM_OS}-amd64.tar.gz
 
+RAILS_VERSION=6.0.0
+RUBY_VERSION=2.6.5
+
 RUST_URL=https://sh.rustup.rs
 
 usage() {
@@ -106,6 +109,12 @@ install_ruby() {
   need_cmd brew
 
   brew install rbenv ruby-build
+  source $HOME/.bash_profile
+  rbenv install ${RUBY_VERSION}
+  rbenv global ${RUBY_VERSION}
+
+  gem install rails -v ${RAILS_VERSION}
+  rbenv rehash
 }
 
 install_rust() {
