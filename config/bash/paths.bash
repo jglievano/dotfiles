@@ -8,6 +8,7 @@ add_path ${GOPATH:?}/bin
 add_path ${HOME}/bin
 add_path ${HOME}/.cargo/bin
 add_path ${HOME}/.homebrew/bin
+add_path ${HOME}/.local/bin
 add_path ${HOME}/.npm-global/bin
 add_path ${HOME}/.rbenv/bin
 add_path ${HOME}/.rbenv/plugins/ruby-build/bin

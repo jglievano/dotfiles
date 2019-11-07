@@ -66,7 +66,7 @@ set modelines=0
 set relativenumber
 set ruler
 set scrolloff=3
-set showbreak=↪
+set showbreak="↪ "
 set showcmd
 set showmode
 set undofile
