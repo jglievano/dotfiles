@@ -45,7 +45,7 @@ filetype plugin indent on
 
 syntax on
 set background=dark
-colorscheme badwolf
+colorscheme nord
 let g:airline_theme='badwolf'
 
 " Tab settings.
