@@ -46,7 +46,7 @@ filetype plugin indent on
 syntax on
 set background=dark
 colorscheme nord
-let g:airline_theme='badwolf'
+let g:airline_theme='nord'
 
 " Tab settings.
 set expandtab
@@ -128,6 +128,9 @@ augroup END
 
 " ---
 "  Plugin configuration
+
+" vim-markdown.
+let g:vim_markdown_folding_disabled = 1
 
 " vim-tmux-navigator.
 let g:tmux_navigator_no_mappings = 1
