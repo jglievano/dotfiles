@@ -130,6 +130,9 @@ augroup END
 " ---
 "  Plugin configuration
 
+" NERDTree
+nnoremap <leader>d :NERDTreeToggle<cr>
+
 " vim-markdown.
 let g:vim_markdown_folding_disabled = 1
 
