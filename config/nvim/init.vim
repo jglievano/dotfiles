@@ -44,9 +44,10 @@ exec s:SourceVimFile('bundles.vim')
 filetype plugin indent on
 
 syntax on
-set background=dark
-colorscheme nord
-let g:airline_theme='nord'
+set termguicolors
+set background=light
+colorscheme PaperColor
+let g:airline_theme='papercolor'
 
 " Tab settings.
 set expandtab

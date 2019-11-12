@@ -70,31 +70,14 @@ Plug 'rhysd/vim-wasm',              { 'for': ['wast', 'wat'] }
 
 " _
 " Colorschemes
-Plug 'altercation/vim-colors-solarized'
-Plug 'alxhnr/clear_colors'
 Plug 'arcticicestudio/nord-vim'
+Plug 'ayu-theme/ayu-vim'
 Plug 'chriskempson/vim-tomorrow-theme'
-Plug 'cormacrelf/vim-colors-github'
 Plug 'danielwe/base16-vim'
-Plug 'dterei/VimCobaltColourScheme'
-Plug 'fxn/vim-monochrome'
-Plug 'jpo/vim-railscasts-theme'
-Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'morhetz/gruvbox'
-Plug 'nanotech/jellybeans.vim'
-Plug 'nightsense/cosmic_latte'
-Plug 'nightsense/snow'
-Plug 'nightsense/stellarized'
+Plug 'nlknguyen/papercolor-theme'
 Plug 'reedes/vim-colors-pencil'
-Plug 'rhysd/vim-color-spring-night'
 Plug 'sjl/badwolf'
-Plug 'tpope/vim-vividchalk'
-Plug 'trapd00r/neverland-vim-theme'
-Plug 'trevordmiller/nova-vim'
-Plug 'twerth/ir_black'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-scripts/Wombat'
-Plug 'w0ng/vim-hybrid'
-Plug 'zaiste/Atom'
 
 call plug#end()
