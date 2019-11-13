@@ -5,31 +5,31 @@ scriptencoding utf-8
 " Helper function definitions.
 
 function! s:MakeDir(dir)
-  if !isdirectory(expand(a:dir))
-    call mkdir(expand(a:dir), 'p')
-  endif
+	if !isdirectory(expand(a:dir))
+		call mkdir(expand(a:dir), 'p')
+	endif
 endfunction
 
 function! s:SourceVimFile(vimfile)
-  let path_name = expand(s:VimPath(a:vimfile))
-  if filereadable(path_name)
-    execute 'source ' . fnameescape(path_name)
-  endif
+	let path_name = expand(s:VimPath(a:vimfile))
+	if filereadable(path_name)
+		execute 'source ' . fnameescape(path_name)
+	endif
 endfunction
 
 function! s:VimPath(filename)
-  if has('nvim')
-    return '~/.config/nvim/' . a:filename
-  else
-    return '~/.vim/' . a:filename
-  endif
+	if has('nvim')
+		return '~/.config/nvim/' . a:filename
+	else
+		return '~/.vim/' . a:filename
+	endif
 endfunction
 
 " ___
 " When in Fish
 
 if &shell =~# 'fish$'
-  set shell=sh
+	set shell=sh
 endif
 
 " ___
@@ -50,10 +50,10 @@ colorscheme PaperColor
 let g:airline_theme='papercolor'
 
 " Tab settings.
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set noexpandtab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 
 " Better defaults.
 set autoindent
@@ -108,27 +108,31 @@ exec s:MakeDir(&backupdir)
 exec s:MakeDir(&directory)
 exec s:MakeDir(&undodir)
 
-"---
-" Trailing whitespace
+" ---
 augroup trailing
-  au!
-  au InsertEnter * :set listchars-=trail:⌴
-  au InsertLeave * :set listchars+=trail:⌴
+	au!
+	au InsertEnter * :set listchars-=trail:⌴
+	au InsertLeave * :set listchars+=trail:⌴
+augroup END
+
+augroup corp_formatting
+	au!
+	au BufNewFile,BufRead /google/src/* set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 augroup END
 
 augroup extension_formats
-  autocmd!
-  autocmd BufRead,BufNewFile *.borg  set filetype=gcl
-  autocmd BufRead,BufNewFile *.fish  set filetype=fish
-  autocmd BufRead,BufNewFile *.m     set filetype=objc
-  autocmd BufRead,BufNewFile *.md    set filetype=markdown
-  autocmd BufRead,BufNewFile *.swift set filetype=swift
-  autocmd BufRead,BufNewFile BUCK    set filetype=python
-  autocmd BufRead,BufNewFile BUILD   set filetype=python
+	au!
+	au BufRead,BufNewFile *.borg  set filetype=gcl
+	au BufRead,BufNewFile *.fish  set filetype=fish
+	au BufRead,BufNewFile *.m     set filetype=objc
+	au BufRead,BufNewFile *.md    set filetype=markdown
+	au BufRead,BufNewFile *.swift set filetype=swift
+	au BufRead,BufNewFile BUCK    set filetype=python
+	au BufRead,BufNewFile BUILD   set filetype=python
 augroup END
 
 " ---
-"  Plugin configuration
+" Plugin configuration
 
 " NERDTree
 nnoremap <leader>d :NERDTreeToggle<cr>
