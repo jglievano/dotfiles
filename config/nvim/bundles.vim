@@ -32,6 +32,8 @@ endif
 " Contexts
 Plug 'chr4/nginx.vim'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'bazelbuild/vim-bazel',      { 'for': ['bzl'] }
+Plug 'google/vim-maktaba',        { 'for': ['bzl'] }
 Plug 'justmao945/vim-clang',      { 'for': ['c', 'cpp'] }
 Plug 'hail2u/vim-css3-syntax',    { 'for': 'css' }
 Plug 'gko/vim-coloresque',        { 'for': ['css', 'scss', 'sass', 'stylus'] }

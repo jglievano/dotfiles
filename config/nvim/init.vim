@@ -127,8 +127,7 @@ augroup extension_formats
 	au BufRead,BufNewFile *.m     set filetype=objc
 	au BufRead,BufNewFile *.md    set filetype=markdown
 	au BufRead,BufNewFile *.swift set filetype=swift
-	au BufRead,BufNewFile BUCK    set filetype=python
-	au BufRead,BufNewFile BUILD   set filetype=python
+	au BufRead,BufNewFile BUCK    set filetype=bzl
 augroup END
 
 " ---
