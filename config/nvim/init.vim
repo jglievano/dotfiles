@@ -17,6 +17,10 @@ function! s:SourceVimFile(vimfile)
 	endif
 endfunction
 
+function! s:SetSpaceIndent()
+	set et sw=2 sts= 2 ts=2
+endfunction
+
 function! s:VimPath(filename)
 	if has('nvim')
 		return '~/.config/nvim/' . a:filename
@@ -115,9 +119,10 @@ augroup trailing
 	au InsertLeave * :set listchars+=trail:⌴
 augroup END
 
+
 augroup corp_formatting
 	au!
-	au BufNewFile,BufRead /google/src/* set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+	au BufNewFile,BufRead /google/src/* call s:SetSpaceIndent()
 augroup END
 
 augroup extension_formats
