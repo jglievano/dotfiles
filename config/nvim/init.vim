@@ -57,7 +57,7 @@ let g:airline_theme='papercolor'
 set noexpandtab
 set shiftwidth=4
 set softtabstop=4
-set tabstop=4
+set tabstop=8
 
 " Better defaults.
 set autoindent
@@ -118,7 +118,6 @@ augroup trailing
 	au InsertEnter * :set listchars-=trail:⌴
 	au InsertLeave * :set listchars+=trail:⌴
 augroup END
-
 
 augroup corp_formatting
 	au!
