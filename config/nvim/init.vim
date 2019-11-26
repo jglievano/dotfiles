@@ -18,7 +18,7 @@ function! s:SourceVimFile(vimfile)
 endfunction
 
 function! s:SetSpaceIndent()
-	set et sw=2 sts= 2 ts=2
+	set et sw=2 sts=2 ts=2
 endfunction
 
 function! s:VimPath(filename)

@@ -60,12 +60,12 @@ prompt_string () {
 		color_prompt=
 	fi
 	if [ "$color_prompt" = yes ]; then
-		printf '\[\033[01;31m\]\\u\[\033[00m\]'
+		printf '\[\033[01;33m\]\\u\[\033[00m\]'
 		printf " @ "
-		printf "\[\033[01;35m\]${hostname}\[\033[00m\]"
+		printf "\[\033[01;33m\]${hostname}\[\033[00m\]"
 		printf " ≡ "
-		printf "\[\033[01;34m\]$(branch_prompt $root_abbrev)\[\033[01;34m\]/${path}\[\033[00m\]\n"
-		printf "\[\033[01;39m\]❯\[\033[00m\] "
+		printf "\[\033[01;31m\]$(branch_prompt $root_abbrev)\[\033[01;31m\]/${path}\[\033[00m\]\n"
+		printf "\[\033[01;31m\]❯\[\033[00m\] "
 	else
 		printf "\u@${hostname} $(branch_prompt $root_abbrev)/${path}\n❯ "
 	fi
