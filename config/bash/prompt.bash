@@ -19,6 +19,29 @@ user_hostname () {
 	fi
 }
 
+user_name () {
+	if [ -z ${MY_USER_NAME+x} ]; then
+        	printf "$(whoami)"
+	else
+		printf "$MY_USER_NAME"
+	fi
+}
+
+color_p () {
+	declare fg="$1" \
+	        bg="$2"
+	printf "\[\033[48;5;${bg};38;5;${fg}m\]"
+}
+
+colorfg_p () {
+	declare fg="$1"
+	printf "\[\033[38;5;${fg}m\]" 
+}
+
+color_rst () {
+	printf "\[\033[00m\]"
+}
+
 branch_prompt () {
 	declare root_name="$1" \
 		branch=$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/') \
@@ -35,7 +58,7 @@ prompt_string () {
 	declare EXIT="$1" \
 		root_abbrev="" \
 		path=$(pwd -P) \
-		username="$USER" \
+		username="$(user_name)" \
 		hostname="$(user_hostname)"
 
 	local vcs_toplevel=$(find_root "${path}" 2>/dev/null)
@@ -60,12 +83,13 @@ prompt_string () {
 		color_prompt=
 	fi
 	if [ "$color_prompt" = yes ]; then
-		printf '\[\033[48;5;016;38;5;228m\] \\u'
-		printf " "
-		printf "\[\033[48;5;016;38;5;228m\]${hostname} \[\033[00m\]"
-		printf "| "
-		printf "\[\033[38;5;166m\]$(branch_prompt $root_abbrev)\[\033[38;5;166m\]/${path}\[\033[00m\]\n"
-		printf "\[\033[01;31m\]❯\[\033[00m\] "
+		printf "$(color_p 228 016) "
+		printf "${username}"
+		printf "$(color_p 214 016)@$(color_p 228 016)"
+		printf "${hostname}"
+		printf " $(color_rst)|"
+		printf "$(colorfg_p 166)$(branch_prompt $root_abbrev)$(colorfg_p 166)/${path}$(color_rst)\n"
+		printf "\[\033[01;31m\]❯$(color_rst) "
 	else
 		printf "\u ${hostname}| $(branch_prompt $root_abbrev)/${path}\n❯ "
 	fi
