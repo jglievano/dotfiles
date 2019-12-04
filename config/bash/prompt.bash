@@ -87,7 +87,7 @@ prompt_string () {
 		printf "${username}"
 		printf "$(color_p 214 016)@$(color_p 228 016)"
 		printf "${hostname}"
-		printf " $(color_rst)|"
+		printf " $(color_rst) "
 		printf "$(colorfg_p 166)$(branch_prompt $root_abbrev)$(colorfg_p 166)/${path}$(color_rst)\n"
 		printf "\[\033[01;31m\]❯$(color_rst) "
 	else
