@@ -55,8 +55,7 @@ let g:airline_theme='papercolor'
 
 " Tab settings.
 set noexpandtab
-set shiftwidth=4
-set softtabstop=4
+set softtabstop=0
 set tabstop=8
 
 " Better defaults.
