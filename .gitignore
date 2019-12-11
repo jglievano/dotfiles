@@ -1,4 +1,5 @@
-config/bash/local
+config/bash/local_post
+config/bash/local_pre
 
 config/nvim/autoload
 config/nvim/plugged
