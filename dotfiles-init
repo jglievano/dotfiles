@@ -54,6 +54,7 @@ main() {
   done
 
   install_homebrew
+  install_stow
   install_go
   install_rust
   install_vim
@@ -93,15 +94,15 @@ ignore() {
 }
 
 install_homebrew() {
+  check_cmd brew && return
   mkdir ${BREW_PATH} && curl -L ${BREW_URL} | tar xz --strip 1 -C ${BREW_PATH}
 }
 
 install_go() {
   # might be easier using Homebrew/apt-get?
-  curl ${GO_URL}
-  tar -xvf go${GO_VERSION}.${SYSTEM_OS}-amd64.tar.gz
-  sudo mv go /usr/local
-  rm go${GO_VERSION}.${SYSTEM_OS}-amd64.tar.gz
+  need_cmd brew
+
+  brew install golang
   mkdir ${HOME}/go
 }
 
@@ -118,7 +119,12 @@ install_ruby() {
 }
 
 install_rust() {
-  curl ${RUST_URL} | sh
+  curl ${RUST_URL} -sSf | sh -s -- -y
+}
+
+install_stow() {
+  need_cmd brew
+  brew install stow
 }
 
 install_vim() {
