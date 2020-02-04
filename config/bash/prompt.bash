@@ -83,7 +83,8 @@ prompt_string () {
 		color_prompt=
 	fi
 	if [ "$color_prompt" = yes ]; then
-		printf "$(colorfg_p 228)  ${username}"
+		printf "$(colorfg_p 240)░░"
+		printf "$(colorfg_p 228)${username}"
 		printf "$(colorfg_p 214)@"
 		printf "$(colorfg_p 228)${hostname}"
 		printf "$(color_rst) "
