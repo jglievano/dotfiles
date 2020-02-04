@@ -48,7 +48,7 @@ branch_prompt () {
 		git_dir=$(git rev-parse --git-dir 2>/dev/null)
 	if [[ -n $git_dir ]]; then
 		# TODO: 41/101 (red) for dirty branch.
-		printf "${root_abbrev}\[\033[102;90m\]⋀${branch}\[\033[0m\]"
+		printf "${root_abbrev}$(colorfg_p 76)<${branch}>$(color_rst)"
 	else
 		printf "${root_abbrev}"
 	fi
@@ -83,11 +83,10 @@ prompt_string () {
 		color_prompt=
 	fi
 	if [ "$color_prompt" = yes ]; then
-		printf "$(color_p 228 016) "
-		printf "${username}"
-		printf "$(color_p 214 016)@$(color_p 228 016)"
-		printf "${hostname}"
-		printf " $(color_rst) "
+		printf "$(colorfg_p 228)  ${username}"
+		printf "$(colorfg_p 214)@"
+		printf "$(colorfg_p 228)${hostname}"
+		printf "$(color_rst) "
 		printf "$(colorfg_p 166)$(branch_prompt $root_abbrev)$(colorfg_p 166)/${path}$(color_rst)\n"
 		printf "\[\033[01;31m\]❯$(color_rst) "
 	else
