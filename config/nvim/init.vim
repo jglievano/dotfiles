@@ -49,7 +49,7 @@ filetype plugin indent on
 
 syntax on
 set termguicolors
-set background=light
+set background=dark
 colorscheme PaperColor
 let g:airline_theme='papercolor'
 
