@@ -75,6 +75,8 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'danielwe/base16-vim'
+Plug 'danilo-augusto/vim-afterglow'
+Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'morhetz/gruvbox'
 Plug 'nlknguyen/papercolor-theme'
 Plug 'reedes/vim-colors-pencil'

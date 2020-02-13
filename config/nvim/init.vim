@@ -50,8 +50,8 @@ filetype plugin indent on
 syntax on
 set termguicolors
 set background=dark
-colorscheme PaperColor
-let g:airline_theme='papercolor'
+colorscheme afterglow
+let g:airline_theme='afterglow'
 
 " Tab settings.
 set noexpandtab
