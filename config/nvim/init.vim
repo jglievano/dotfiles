@@ -18,7 +18,7 @@ function! s:SourceVimFile(vimfile)
 endfunction
 
 function! s:SetSpaceIndent()
-	set et sw=2 sts=2 ts=2
+	set et shiftwidth=2 sts=2 ts=2
 endfunction
 
 function! s:VimPath(filename)
@@ -55,8 +55,9 @@ let g:airline_theme='afterglow'
 
 " Tab settings.
 set noexpandtab
+set shiftwidth=2
 set softtabstop=0
-set tabstop=8
+set tabstop=2
 
 " Better defaults.
 set autoindent
