@@ -67,6 +67,8 @@ Plug 'keith/swift.vim',           { 'for': 'swift' }
 Plug 'cespare/vim-toml',          { 'for': 'toml' }
 Plug 'leafgarland/typescript-vim',{ 'for': 'typescript' }
 Plug 'quramy/tsuquyomi',          { 'for': 'typescript' }
+Plug 'aklt/plantuml-syntax',      { 'for': 'uml' }
+Plug 'scrooloose/vim-slumlord',   { 'for': 'uml' }
 Plug 'rhysd/vim-wasm',            { 'for': ['wast', 'wat'] }
 
 " _
