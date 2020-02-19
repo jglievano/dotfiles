@@ -12,15 +12,6 @@ remove_path() {
 	sed "s/:$//")
 }
 
-say() {
-    printf 'say: %s\n' "$1"
-}
-
-err() {
-    say "$1" >&2
-    exit 1
-}
-
 need_cmd() {
     if ! check_cmd "$1"; then
 	err "need '$1' (command not found)"
@@ -36,8 +27,31 @@ ensure() {
     if ! "$@"; then err "command failed: $*"; fi
 }
 
-# Used to indicate that the command's results are being
-# intentionally ignored.
-ignore() {
-    "$@"
+function es() {
+	if [[ $(uname) == "Linux" ]]; then
+		EMACS="/usr/bin/emacs"
+	elif [[ $(uname) == "Darwin" ]]; then
+		EMACS="$HOME/.homebrew/bin/emacs"
+	else
+		printf "OS not recognized\n"
+		exit 1
+	fi
+
+	if [[ "$1" == "stop" ]]; then
+		emacsclient -e '(kill-emacs)'
+
+	elif [[ "$1" == "start" ]]; then
+		emacs --daemon
+
+	else
+		printf "usage: es <start|stop>\n"
+	fi
+}
+
+function ew() {
+	emacsclient -nc $1
+}
+
+function et() {
+	emacsclient -nw $1
 }
