@@ -55,3 +55,10 @@ function ew() {
 function et() {
 	emacsclient -nw $1
 }
+
+function tm() {
+	SESSION=$(hostname -s)
+	[ -n "$1" ] && SESSION=$1
+	printf "created session \"${SESSION}\"\n"
+	tmux -S /tmp/tmux_shared new -A -s ${SESSION} -n ws
+}
