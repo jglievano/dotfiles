@@ -29,5 +29,9 @@ export ANDROID_SDK_ROOT=$HOME/android/sdk
 export ANDROID_AVD_HOME=$HOME/.android/avd
 export GOPATH=$HOME/go
 
+if [ $(uname) == Darwin ]; then
+    export GRAPHVIZ_DOT=$HOME/.homebrew/bin/dot
+fi
+
 GPG_TTY=`tty`
 export GPG_TTY
