@@ -5,35 +5,35 @@ scriptencoding utf-8
 " Helper function definitions.
 
 function! s:MakeDir(dir)
-	if !isdirectory(expand(a:dir))
-		call mkdir(expand(a:dir), 'p')
-	endif
+  if !isdirectory(expand(a:dir))
+    call mkdir(expand(a:dir), 'p')
+  endif
 endfunction
 
 function! s:SourceVimFile(vimfile)
-	let path_name = expand(s:VimPath(a:vimfile))
-	if filereadable(path_name)
-		execute 'source ' . fnameescape(path_name)
-	endif
+  let path_name = expand(s:VimPath(a:vimfile))
+  if filereadable(path_name)
+    execute 'source ' . fnameescape(path_name)
+  endif
 endfunction
 
 function! s:SetSpaceIndent()
-	set et shiftwidth=2 sts=2 ts=2
+  set et shiftwidth=2 sts=2 ts=2
 endfunction
 
 function! s:VimPath(filename)
-	if has('nvim')
-		return '~/.config/nvim/' . a:filename
-	else
-		return '~/.vim/' . a:filename
-	endif
+  if has('nvim')
+    return '~/.config/nvim/' . a:filename
+  else
+    return '~/.vim/' . a:filename
+  endif
 endfunction
 
 " ___
 " When in Fish
 
 if &shell =~# 'fish$'
-	set shell=sh
+  set shell=sh
 endif
 
 " ___
@@ -114,24 +114,24 @@ exec s:MakeDir(&undodir)
 
 " ---
 augroup trailing
-	au!
-	au InsertEnter * :set listchars-=trail:⌴
-	au InsertLeave * :set listchars+=trail:⌴
+  au!
+  au InsertEnter * :set listchars-=trail:⌴
+  au InsertLeave * :set listchars+=trail:⌴
 augroup END
 
 augroup corp_formatting
-	au!
-	au BufNewFile,BufRead /google/src/* call s:SetSpaceIndent()
+  au!
+  au BufNewFile,BufRead /google/src/* call s:SetSpaceIndent()
 augroup END
 
 augroup extension_formats
-	au!
-	au BufRead,BufNewFile *.borg  set filetype=gcl
-	au BufRead,BufNewFile *.fish  set filetype=fish
-	au BufRead,BufNewFile *.m     set filetype=objc
-	au BufRead,BufNewFile *.md    set filetype=markdown
-	au BufRead,BufNewFile *.swift set filetype=swift
-	au BufRead,BufNewFile BUCK    set filetype=bzl
+  au!
+  au BufRead,BufNewFile *.borg  set filetype=gcl
+  au BufRead,BufNewFile *.fish  set filetype=fish
+  au BufRead,BufNewFile *.m     set filetype=objc
+  au BufRead,BufNewFile *.md    set filetype=markdown
+  au BufRead,BufNewFile *.swift set filetype=swift
+  au BufRead,BufNewFile BUCK    set filetype=bzl
 augroup END
 
 " ---
@@ -139,25 +139,25 @@ augroup END
 
 " Airline
 let g:airline_mode_map = {
-	\ '__'    : '-',
-	\ 'c'     : 'C',
-	\ 'i'     : 'I',
-	\ 'ic'    : 'I',
-	\ 'ix'    : 'I',
-	\ 'n'     : 'N',
-	\ 'multi' : 'M',
-	\ 'ni'    : 'N',
-	\ 'no'    : 'N',
-	\ 'R'     : 'R',
-	\ 'Rv'    : 'R',
-	\ 's'     : 'S',
-	\ 'S'     : 'S',
-	\ '^S'    : 'S',
-	\ 't'     : 'T',
-	\ 'v'     : 'V',
-	\ 'V'     : 'V',
-	\ '^V'    : 'V',
-	\ }
+  \ '__'    : '-',
+  \ 'c'     : 'C',
+  \ 'i'     : 'I',
+  \ 'ic'    : 'I',
+  \ 'ix'    : 'I',
+  \ 'n'     : 'N',
+  \ 'multi' : 'M',
+  \ 'ni'    : 'N',
+  \ 'no'    : 'N',
+  \ 'R'     : 'R',
+  \ 'Rv'    : 'R',
+  \ 's'     : 'S',
+  \ 'S'     : 'S',
+  \ '^S'    : 'S',
+  \ 't'     : 'T',
+  \ 'v'     : 'V',
+  \ 'V'     : 'V',
+  \ '^V'    : 'V',
+  \ }
 
 " NERDTree
 nnoremap <leader>d :NERDTreeToggle<cr>
