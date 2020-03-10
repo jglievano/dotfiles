@@ -54,9 +54,9 @@ colorscheme afterglow
 let g:airline_theme='afterglow'
 
 " Tab settings.
-set noexpandtab
+set expandtab
 set shiftwidth=2
-set softtabstop=0
+set softtabstop=2
 set tabstop=2
 
 " Better defaults.
