@@ -49,9 +49,11 @@ filetype plugin indent on
 
 syntax on
 set termguicolors
-set background=dark
-colorscheme afterglow
-let g:airline_theme='afterglow'
+set background=light
+let g:pencil_higher_contrast_ui=1
+let g:pencil_neutral_color_bg=1
+colorscheme pencil
+let g:airline_theme='pencil'
 
 " Tab settings.
 set expandtab

@@ -64,6 +64,7 @@ Plug 'racer-rust/vim-racer',      { 'for': 'rust' }
 Plug 'rust-lang/rust.vim',        { 'for': 'rust' }
 Plug 'derekwyatt/vim-scala',      { 'for': 'scala' }
 Plug 'keith/swift.vim',           { 'for': 'swift' }
+Plug 'lervag/vimtex',             { 'for': 'tex' }
 Plug 'cespare/vim-toml',          { 'for': 'toml' }
 Plug 'leafgarland/typescript-vim',{ 'for': 'typescript' }
 Plug 'quramy/tsuquyomi',          { 'for': 'typescript' }
