@@ -49,10 +49,8 @@ filetype plugin indent on
 
 syntax on
 set termguicolors
-set background=light
-let g:pencil_higher_contrast_ui=1
-let g:pencil_neutral_color_bg=1
-colorscheme pencil
+set background=dark
+colorscheme solarized
 let g:airline_theme='pencil'
 
 " Tab settings.

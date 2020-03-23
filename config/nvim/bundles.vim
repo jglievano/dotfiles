@@ -75,6 +75,7 @@ Plug 'rhysd/vim-wasm',            { 'for': ['wast', 'wat'] }
 " _
 " Colorschemes
 Plug 'arcticicestudio/nord-vim'
+Plug 'altercation/vim-colors-solarized'
 Plug 'ayu-theme/ayu-vim'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'danielwe/base16-vim'
