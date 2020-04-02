@@ -49,9 +49,18 @@ filetype plugin indent on
 
 syntax on
 set termguicolors
-set background=dark
-colorscheme solarized
-let g:airline_theme='pencil'
+set background=light
+let g:PaperColor_Theme_Options = {
+      \   'theme': {
+      \     'default.light': {
+      \       'override': {
+      \         'color00': ['#feffff', '15']
+      \       }
+      \     }
+      \   }
+      \ }
+colorscheme papercolor
+let g:airline_theme='cobalt2'
 
 " Tab settings.
 set expandtab

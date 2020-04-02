@@ -73,7 +73,7 @@ Plug 'scrooloose/vim-slumlord',   { 'for': 'uml' }
 Plug 'rhysd/vim-wasm',            { 'for': ['wast', 'wat'] }
 
 " _
-" Colorschemes
+" Dark colorschemes
 Plug 'arcticicestudio/nord-vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ayu-theme/ayu-vim'
@@ -81,10 +81,16 @@ Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'danielwe/base16-vim'
 Plug 'danilo-augusto/vim-afterglow'
 Plug 'dracula/vim', {'as': 'dracula'}
+Plug 'gavinok/spaceway.vim'
 Plug 'morhetz/gruvbox'
-Plug 'nlknguyen/papercolor-theme'
 Plug 'reedes/vim-colors-pencil'
 Plug 'sjl/badwolf'
+
+" Light colorschemes
+Plug 'lucy/term.vim'
+Plug 'nlknguyen/papercolor-theme'
+
+" Shared colorschemes
 Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
