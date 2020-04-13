@@ -84,9 +84,9 @@ prompt_string () {
   fi
   if [ "$color_prompt" = yes ]; then
     printf "$(colorfg_p 238)░░"
-    printf "$(colorfg_p 240)${username}"
-    printf "$(colorfg_p 245)@"
-    printf "$(colorfg_p 240)${hostname}"
+    printf "$(colorfg_p 250)${username}"
+    printf "$(colorfg_p 253)@"
+    printf "$(colorfg_p 250)${hostname}"
     printf "$(color_rst) "
     printf "$(colorfg_p 166)$(branch_prompt $root_abbrev)$(colorfg_p 166)/${path}$(color_rst)\n"
     printf "\[\033[01;31m\]❯$(color_rst) "
