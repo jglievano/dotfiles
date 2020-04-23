@@ -86,7 +86,7 @@ prompt_string () {
     printf "$(colorfg_p 252)${hostname}"
     printf "$(colorfg_p 31):"
     printf "$(colorfg_p 166)$(branch_prompt $root_abbrev)$(colorfg_p 166)/${path}"
-    printf "$(colorfg_p 31)\$ "
+    printf "$(colorfg_p 31)\$ $(color_rst)"
   else
     printf "\u ${hostname}| $(branch_prompt $root_abbrev)/${path}\n$ "
   fi
