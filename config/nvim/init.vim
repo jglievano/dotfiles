@@ -64,7 +64,7 @@ let g:PaperColor_Theme_Options = {
       \     }
       \   }
       \ }
-colorscheme papercolor
+colorscheme PaperColor
 let g:airline_theme='cobalt2'
 
 " Tab settings.
