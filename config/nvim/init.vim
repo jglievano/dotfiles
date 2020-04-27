@@ -49,7 +49,7 @@ filetype plugin indent on
 
 syntax on
 set termguicolors
-set background=dark
+set background=light
 let g:PaperColor_Theme_Options = {
       \   'theme': {
       \     'default.light': {
