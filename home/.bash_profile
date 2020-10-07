@@ -15,7 +15,7 @@ fi
 
 # Source bash config files.files
 
-for CONFIG_FILE in "$BASH_CONFIG_DIR"/{functions,env,paths,packages,aliases,prompt}.bash; do
+for CONFIG_FILE in "$BASH_CONFIG_DIR"/{functions,env,paths,packages,aliases}.bash; do
   [ -f "$CONFIG_FILE" ] && . "$CONFIG_FILE"
 done
 
@@ -35,3 +35,9 @@ unset BASH_CONFIG_FILE CONFIG_FILE LOCAL_FILE
 # Export
 
 export BASH_CONFIG_DIR BASH_LOCAL_PRE_CONFIG_DIR BASH_LOCAL_CONFIG_DIR
+
+if ! command -v starship &>/dev/null; then
+  eval "$(starship init zsh)"
+else
+  [ -f "$BASH_CONFIG_DIR/prompt.bash" ] && . "$BASH_CONFIG_DIR/prompt.bash"
+fi

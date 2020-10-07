@@ -2,6 +2,7 @@ call plug#begin()
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -39,6 +40,7 @@ Plug 'gko/vim-coloresque',        { 'for': ['css', 'scss', 'sass', 'stylus'] }
 Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
 Plug 'elixir-editors/vim-elixir', { 'for': 'elm' }
 Plug 'elmcast/elm-vim',           { 'for': 'elm' }
+Plug 'dag/vim-fish',              { 'for': 'fish' }
 Plug 'rix0rrr/vim-gcl',           { 'for': 'gcl' }
 Plug 'jparise/vim-graphql',       { 'for': 'graphql' }
 Plug 'tpope/vim-haml',            { 'for': 'haml' }
