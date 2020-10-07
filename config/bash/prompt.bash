@@ -83,8 +83,7 @@ prompt_string () {
     color_prompt=
   fi
   if [ "$color_prompt" = yes ]; then
-    printf "$(colorfg_p 235)${hostname}"
-    printf "$(colorfg_p 31):"
+    printf "$(colorfg_p 31)${hostname}:"
     printf "$(colorfg_p 166)$(branch_prompt $root_abbrev)$(colorfg_p 166)/${path}"
     printf "$(colorfg_p 31)\$ $(color_rst)"
   else
