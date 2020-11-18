@@ -41,3 +41,5 @@ if ! command -v starship &>/dev/null; then
 else
   [ -f "$BASH_CONFIG_DIR/prompt.bash" ] && . "$BASH_CONFIG_DIR/prompt.bash"
 fi
+
+export PATH="$HOME/.cargo/bin:$PATH"
