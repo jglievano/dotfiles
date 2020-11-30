@@ -49,8 +49,7 @@ filetype plugin indent on
 
 syntax on
 set termguicolors
-set background=light
-let g:PaperColor_Theme_Options = {
+let g:PaperColor_Theme_Options={
       \   'theme': {
       \     'default.light': {
       \       'override': {
@@ -64,8 +63,10 @@ let g:PaperColor_Theme_Options = {
       \     }
       \   }
       \ }
-colorscheme PaperColor
-let g:airline_theme='cobalt2'
+let g:gruvbox_contrast_dark='hard'
+set background=dark
+colorscheme gruvbox
+let g:airline_theme='gruvbox'
 
 " Tab settings.
 set expandtab
