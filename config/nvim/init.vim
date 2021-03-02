@@ -64,9 +64,9 @@ let g:PaperColor_Theme_Options={
       \   }
       \ }
 let g:gruvbox_contrast_dark='hard'
-set background=dark
-colorscheme gruvbox
-let g:airline_theme='gruvbox'
+set background=light
+colorscheme pencil
+let g:airline_theme='pencil'
 
 " Tab settings.
 set expandtab
