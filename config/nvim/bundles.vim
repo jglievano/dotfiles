@@ -58,7 +58,6 @@ Plug 'jkramer/vim-checkbox',      { 'for': 'markdown' }
 Plug 'plasticboy/vim-markdown',   { 'for': 'markdown' }
 Plug 'stanangeloff/php.vim',      { 'for': 'php' }
 Plug 'digitaltoad/vim-pug',       { 'for': 'pug' }
-Plug 'davidhalter/jedi-vim',      { 'for': 'python' }
 Plug 'klen/python-mode',          { 'for': 'python' }
 Plug 'tpope/vim-rails',           { 'for': 'ruby' }
 Plug 'vim-ruby/vim-ruby',         { 'for': 'ruby' }
