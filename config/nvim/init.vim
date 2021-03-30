@@ -64,8 +64,8 @@ let g:PaperColor_Theme_Options={
       \   }
       \ }
 let g:gruvbox_contrast_dark='hard'
-set background=light
-colorscheme pencil
+" set background=light
+colorscheme borland
 let g:airline_theme='pencil'
 
 " Tab settings.

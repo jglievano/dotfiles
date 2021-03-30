@@ -83,6 +83,7 @@ Plug 'danielwe/base16-vim'
 Plug 'danilo-augusto/vim-afterglow'
 Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'gavinok/spaceway.vim'
+Plug 'letorbi/vim-colors-modern-borland'
 Plug 'morhetz/gruvbox'
 Plug 'reedes/vim-colors-pencil'
 Plug 'sjl/badwolf'
